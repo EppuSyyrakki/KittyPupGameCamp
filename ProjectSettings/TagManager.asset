@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Backwall
+    uniqueID: 764706761
+    locked: 0
+  - name: Board
+    uniqueID: 769917465
+    locked: 0
+  - name: Teacher
+    uniqueID: 2088533607
+    locked: 0
