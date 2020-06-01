@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322992781}
   m_Layer: 9
-  m_Name: BoardPosition6
+  m_Name: BoardPosition5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 344696425}
   m_Layer: 9
-  m_Name: BoardPosition13
+  m_Name: BoardPosition12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -366,7 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 656865149}
   m_Layer: 9
-  m_Name: BoardPosition9
+  m_Name: BoardPosition8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 689606557}
   m_Layer: 9
-  m_Name: BoardPosition4
+  m_Name: BoardPosition3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,7 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 805403336}
   m_Layer: 9
-  m_Name: BoardPosition15
+  m_Name: BoardPosition14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1011331717}
   m_Layer: 9
-  m_Name: BoardPosition11
+  m_Name: BoardPosition10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -578,7 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1171575397}
   m_Layer: 9
-  m_Name: BoardPosition8
+  m_Name: BoardPosition7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,6 +692,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba63357f524dbae44b64aebcf844d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardPositions:
+  - {fileID: 1491447478}
+  - {fileID: 1695016474}
+  - {fileID: 1375377202}
+  - {fileID: 689606556}
+  - {fileID: 1864668730}
+  - {fileID: 322992780}
+  - {fileID: 1455110997}
+  - {fileID: 1171575396}
+  - {fileID: 656865148}
+  - {fileID: 1687490328}
+  - {fileID: 1011331716}
+  - {fileID: 1677166589}
+  - {fileID: 344696424}
+  - {fileID: 1369510146}
+  - {fileID: 805403335}
 --- !u!1 &1369510146
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369510147}
   m_Layer: 9
-  m_Name: BoardPosition14
+  m_Name: BoardPosition13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -732,7 +748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375377203}
   m_Layer: 9
-  m_Name: BoardPosition3
+  m_Name: BoardPosition2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1455110998}
   m_Layer: 9
-  m_Name: BoardPosition7
+  m_Name: BoardPosition6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -886,7 +902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491447479}
   m_Layer: 9
-  m_Name: BoardPosition1
+  m_Name: BoardPosition0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,7 +932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1677166590}
   m_Layer: 9
-  m_Name: BoardPosition12
+  m_Name: BoardPosition11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,7 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687490329}
   m_Layer: 9
-  m_Name: BoardPosition10
+  m_Name: BoardPosition9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -976,7 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1695016475}
   m_Layer: 9
-  m_Name: BoardPosition2
+  m_Name: BoardPosition1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,7 +1022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864668731}
   m_Layer: 9
-  m_Name: BoardPosition5
+  m_Name: BoardPosition4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
