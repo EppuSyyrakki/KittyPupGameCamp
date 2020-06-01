@@ -692,6 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba63357f524dbae44b64aebcf844d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 1242938667}
   boardPositions:
   - {fileID: 1491447478}
   - {fileID: 1695016474}
@@ -708,6 +709,8 @@ MonoBehaviour:
   - {fileID: 344696424}
   - {fileID: 1369510146}
   - {fileID: 805403335}
+  _writingTimer: 6
+  _watchingTimer: 10
 --- !u!1 &1369510146
 GameObject:
   m_ObjectHideFlags: 0
