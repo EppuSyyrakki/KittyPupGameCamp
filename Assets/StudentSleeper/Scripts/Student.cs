@@ -46,11 +46,6 @@ public class Student : MonoBehaviour
         SetScoresToDefault();
     }
 
-    private void CountTotalScore(int timesToAdd)
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -59,14 +54,17 @@ public class Student : MonoBehaviour
 
         if (_isSleeping && _scoreCountingEvent != null) _scoreCountingEvent.Invoke(1);
 
-        if (!_isSleeping) SetMinorScoresToZero();
+        if (!_isSleeping)
+        {
+            if (_totalScoreCountingEvent != null) _totalScoreCountingEvent.Invoke(1);
+
+            SetMinorScoresToZero();
+        }
     }
 
     private void CountCurrentScore(int timesToAdd)
     {
         _currentTime += Time.deltaTime;
-
-        Debug.Log("DO THE ADDITION!");
 
         if (_teacher.isWatching) _currentScore = -Mathf.FloorToInt(_currentTime);
 
@@ -75,7 +73,18 @@ public class Student : MonoBehaviour
         Debug.Log("The score to add is: " + _currentScore);
     }
 
- 
+    private void CountTotalScore(int timesToAdd)
+    {
+        Debug.Log("DO THE ADDITION! " + _totalScore + " + " + _currentScore);
+
+        _totalScore += _currentScore;
+
+        _currentScore = 0;
+        _currentTime = 0;
+
+        Debug.Log("Total Score: " + _totalScore + "(" + _currentScore + ")");
+
+    }
 
 
     private bool FreeToSleep()
@@ -102,6 +111,7 @@ public class Student : MonoBehaviour
         {
             _sr.color = Color.white;
             _isSleeping = false;
+
         }
     }
 
