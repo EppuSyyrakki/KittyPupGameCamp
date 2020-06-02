@@ -2,88 +2,88 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
+
+
+[System.Serializable]
+public class MyIntEvent : UnityEvent<int>
+{
+}
 
 public class Student : MonoBehaviour
 {
     public Teacher _teacher;
-
     public SpriteRenderer _sr;
 
-    private bool _isTeacherWatching;
     private bool _isSleeping;
+    private bool _isTimeToIncrementTotal;
 
     public int _totalScore;
     public int _currentScore;
+
+    private int _plusScore;
     private int _minusScore;
 
     private float _currentTime = 0f;
 
+    public MyIntEvent _scoreCountingEvent;
+    public MyIntEvent _totalScoreCountingEvent;
+    
+
     // Start is called before the first frame update
     void Start()
     {
+        if (_scoreCountingEvent == null) _scoreCountingEvent = new MyIntEvent();
+
+        if (_totalScoreCountingEvent == null) _totalScoreCountingEvent = new MyIntEvent();
+
+        _scoreCountingEvent.AddListener(CountCurrentScore);
+
+        _totalScoreCountingEvent.AddListener(CountTotalScore);
+
         StudentBegin();
+        SetScoresToDefault();
     }
 
+    private void CountTotalScore(int timesToAdd)
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-
+        // user input (mouse button 0) sets student to sleep (down) or awake (up)
         SetToSleep();
-        ScoreCounting();
+
+        if (_isSleeping && _scoreCountingEvent != null) _scoreCountingEvent.Invoke(1);
+
+        if (!_isSleeping) SetMinorScoresToZero();
     }
 
-    private void ScoreCounting()
+    private void CountCurrentScore(int timesToAdd)
     {
-        // the score counting does not work as it should
-        // Total count is wiped along side with the current count
-
         _currentTime += Time.deltaTime;
 
-        if (FreeToSleep())
-        {
+        Debug.Log("DO THE ADDITION!");
 
-            if (_isSleeping)
-            {
+        if (_teacher.isWatching) _currentScore = -Mathf.FloorToInt(_currentTime);
 
-                _currentScore = Mathf.RoundToInt(_currentTime);
-            }
-            else
-            {
+        if (!_teacher.isWatching) _currentScore = Mathf.FloorToInt(_currentTime);
 
-                _totalScore = _currentScore;
-                _currentTime = 0;
-            }
-        }
-        else
-        {
-
-            if (_isSleeping)
-            {
-                _minusScore = -Mathf.RoundToInt(_currentTime);
-            }
-
-            _currentScore = 0;
-            _currentTime = 0;
-        }
-
-        _totalScore = _currentScore + _minusScore;
-        _minusScore = 0;
-
-        Debug.Log("current score: " + _currentScore);
-        Debug.Log("Total score: " + _totalScore);
+        Debug.Log("The score to add is: " + _currentScore);
     }
+
+ 
+
 
     private bool FreeToSleep()
     {
-        _isTeacherWatching = _teacher.isWatching;
-
-        if (_isTeacherWatching && _isSleeping)
+        if (_teacher.isWatching) 
         {
-            return false;
+            return false; 
         }
-
         return true;
     }
 
@@ -91,9 +91,13 @@ public class Student : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            SetMinorScoresToZero();
             _sr.color = Color.blue;
             _isSleeping = true;
+
+            _scoreCountingEvent.Invoke(1);
         }
+
         if (Input.GetMouseButtonUp(0))
         {
             _sr.color = Color.white;
@@ -101,13 +105,23 @@ public class Student : MonoBehaviour
         }
     }
 
+    private void SetMinorScoresToZero()
+    {
+        _currentScore = 0;
+        _minusScore = 0;
+        _plusScore = 0;
+    }
+
+    private void SetScoresToDefault()
+    {
+        SetMinorScoresToZero();
+        _totalScore = 0;
+    }
+
     private void StudentBegin()
     {
         _sr.color = Color.white;
         _isSleeping = false;
-        _currentScore = 0;
-        _totalScore = 0;
-        _minusScore = 0;
     }
 
 }
