@@ -22,9 +22,6 @@ public class Student : MonoBehaviour
     public int _totalScore;
     public int _currentScore;
 
-    private int _plusScore;
-    private int _minusScore;
-
     private float _currentTime = 0f;
 
     public MyIntEvent _scoreCountingEvent;
@@ -64,7 +61,7 @@ public class Student : MonoBehaviour
         {
             if (_totalScoreCountingEvent != null) _totalScoreCountingEvent.Invoke(1);
 
-            SetMinorScoresToZero();
+            _currentScore = 0;
         }
         if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
     }
@@ -107,7 +104,7 @@ public class Student : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !_teacher.isDone)
         {
-            SetMinorScoresToZero();
+            _currentScore = 0;
             _sr.color = Color.blue;
             _isSleeping = true;
 
@@ -128,16 +125,9 @@ public class Student : MonoBehaviour
         }
     }
 
-    private void SetMinorScoresToZero()
-    {
-        _currentScore = 0;
-        _minusScore = 0;
-        _plusScore = 0;
-    }
-
     private void SetScoresToDefault()
     {
-        SetMinorScoresToZero();
+        _currentScore = 0;
         _totalScore = 0;
     }
 
