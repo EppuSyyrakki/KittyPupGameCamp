@@ -16,7 +16,7 @@ public class Student : MonoBehaviour
     public Teacher _teacher;
     public SpriteRenderer _sr;
 
-    private bool _isSleeping;
+    public bool _isSleeping;
     private bool _isTimeToIncrementTotal;
 
     public int _totalScore;
