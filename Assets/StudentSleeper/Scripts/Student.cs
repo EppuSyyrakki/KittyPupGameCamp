@@ -29,7 +29,13 @@ public class Student : MonoBehaviour
 
     public MyIntEvent _scoreCountingEvent;
     public MyIntEvent _totalScoreCountingEvent;
+
+    public Transform _startPosition;
+    public Transform _gamePosition;
+    public float _walkSpeed;
+    private float _lerpT = 0;
     
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +66,7 @@ public class Student : MonoBehaviour
 
             SetMinorScoresToZero();
         }
+        if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
     }
 
     private void CountCurrentScore(int timesToAdd)
@@ -98,7 +105,7 @@ public class Student : MonoBehaviour
 
     private void SetToSleep()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !_teacher.isDone)
         {
             SetMinorScoresToZero();
             _sr.color = Color.blue;
@@ -107,11 +114,17 @@ public class Student : MonoBehaviour
             _scoreCountingEvent.Invoke(1);
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !_teacher.isDone)
         {
             _sr.color = Color.white;
             _isSleeping = false;
 
+        }
+
+        if (_teacher.isDone)
+        {
+            _sr.flipX = true;
+            Walk(_gamePosition, _startPosition);
         }
     }
 
@@ -134,4 +147,11 @@ public class Student : MonoBehaviour
         _isSleeping = false;
     }
 
+    private void Walk(Transform from, Transform to)
+    {
+        transform.position = Vector3.Lerp(from.position, to.position, _lerpT);
+        _lerpT += Time.deltaTime * _walkSpeed;
+
+        if (transform.position == to.position && !_teacher.isDone) _lerpT = 0;
+    }
 }

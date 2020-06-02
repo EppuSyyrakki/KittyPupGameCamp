@@ -17,7 +17,7 @@ public class Teacher : MonoBehaviour
     private float _lerpT;
     private int _boardIndex;
     public bool isWatching { get; set; }
-    public bool isReady { get; set; }
+    public bool isDone { get; set; }
     private Vector3 lastPosition;
     private Vector3 nextPosition;
 
@@ -26,7 +26,7 @@ public class Teacher : MonoBehaviour
     void Start()
     {
         lastPosition = transform.position;
-        nextPosition = transform.position;
+        nextPosition = new Vector3(boardPositions[_boardIndex].transform.position.x, transform.position.y, transform.position.z);
         _boardIndex = 0;
         Enter();     
     }
@@ -46,12 +46,14 @@ public class Teacher : MonoBehaviour
 
         if (transform.position.x != nextPosition.x) Walk();
         else _lerpT = 0;
+
+        if (isDone) EndLecture();
     }
 
     private void Enter()
     {
-        // teacher moves in from the left, watching and talking
-        NotWatching();
+        // teacher starts by watching and talking
+        Watching();
     }
 
     private void Walk()
@@ -97,6 +99,11 @@ public class Teacher : MonoBehaviour
         _currentTime = 0;
     }
 
+    private void EndLecture()
+    {
+        sr.color = Color.green;   // TODO turning without timer and no watching, ring sound
+    }
+
     private float RandomizeTime(float time)
     {
         float newTime = Random.Range(0.8f * time, 1.2f * time);
@@ -124,8 +131,8 @@ public class Teacher : MonoBehaviour
                 SpriteFader sf = allWritings[i].GetComponent<SpriteFader>();
                 sf.fadingOut = true;
             }
-            
-            // TODO game ends
+
+            isDone = true;
         }
     }
 
