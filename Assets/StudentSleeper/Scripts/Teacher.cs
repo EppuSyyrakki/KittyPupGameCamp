@@ -25,6 +25,7 @@ public class Teacher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isDone = false;
         lastPosition = transform.position;
         nextPosition = new Vector3(boardPositions[_boardIndex].transform.position.x, transform.position.y, transform.position.z);
         _boardIndex = 0;
@@ -42,12 +43,11 @@ public class Teacher : MonoBehaviour
 
         if (_currentTime >= _actualWatchingTimer && isWatching) NotWatching();
 
-        _currentTime += Time.deltaTime;
+        if (!isDone) _currentTime += Time.deltaTime;
+        else EndLecture();
 
         if (transform.position.x != nextPosition.x) Walk();
         else _lerpT = 0;
-
-        if (isDone) EndLecture();
     }
 
     private void Enter()
