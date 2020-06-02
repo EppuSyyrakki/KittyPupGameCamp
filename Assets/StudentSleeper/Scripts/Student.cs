@@ -75,7 +75,7 @@ public class Student : MonoBehaviour
 
     private void CountTotalScore(int timesToAdd)
     {
-        Debug.Log("DO THE ADDITION! " + _totalScore + " + " + _currentScore);
+        Debug.Log("DO THE ADDITION!" + _totalScore + " + " + _currentScore);
 
         _totalScore += _currentScore;
 
