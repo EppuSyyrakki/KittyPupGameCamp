@@ -8,6 +8,9 @@ public class Teacher : MonoBehaviour
     public float _walkSpeed;
     public float _writingTimer;   
     public float _watchingTimer;
+    public float _difficultyMultiplier;
+    public float _minimumTime;
+    private float _currentDifficultyMultiplier;
     private float _actualWatchingTimer;
     private float _actualWritingTimer;
     private float _currentTime;
@@ -31,7 +34,7 @@ public class Teacher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("boardIndex is " + _boardIndex);
+        // Debug.Log("boardIndex is " + _boardIndex);
 
         if (_currentTime >= _actualWritingTimer * 0.9f && !isWatching) WatchingSoon();
 
@@ -48,7 +51,7 @@ public class Teacher : MonoBehaviour
     private void Enter()
     {
         // teacher moves in from the left, watching and talking
-        Watching();
+        NotWatching();
     }
 
     private void Walk()
@@ -59,9 +62,17 @@ public class Teacher : MonoBehaviour
 
     private void Watching()
     {       
-        _actualWatchingTimer = RandomizeTime(_watchingTimer);
-        // Debug.Log("Watching time is " + _actualWatchingTimer);
+        _actualWatchingTimer = RandomizeTime(_watchingTimer - _currentDifficultyMultiplier) ;
 
+        if (_actualWatchingTimer < _minimumTime)
+        {
+            _actualWatchingTimer = _minimumTime;
+            Debug.Log("minimum time reached.");
+        }
+
+        _currentDifficultyMultiplier += _difficultyMultiplier;
+        Debug.Log("Watching time is " + _actualWatchingTimer);
+        Debug.Log("current difficultyMultiplier is " + _currentDifficultyMultiplier);
         sr.color = Color.red;   // TODO actual turning, warning sign, talking sound
         isWatching = true;
         _currentTime = 0;
@@ -75,9 +86,11 @@ public class Teacher : MonoBehaviour
     private void NotWatching()
     {
         DefineVectors();
-        _actualWritingTimer = RandomizeTime(_writingTimer);
-        // Debug.Log("Writing time is " + _actualWritingTimer);
+        _actualWritingTimer = RandomizeTime(_writingTimer - _currentDifficultyMultiplier);
 
+        if (_actualWritingTimer < _minimumTime) _actualWritingTimer = _minimumTime;
+
+        Debug.Log("Writing time is " + _actualWritingTimer);
         SpawnWriting();
         sr.color = Color.white; // TODO actual turning, writing, talking & writing sounds
         isWatching = false;
@@ -86,7 +99,8 @@ public class Teacher : MonoBehaviour
 
     private float RandomizeTime(float time)
     {
-        return Random.Range(0.8f * time, 1.2f * time);
+        float newTime = Random.Range(0.8f * time, 1.2f * time);
+        return newTime;
     }
 
     private void SpawnWriting()
@@ -110,8 +124,8 @@ public class Teacher : MonoBehaviour
                 SpriteFader sf = allWritings[i].GetComponent<SpriteFader>();
                 sf.fadingOut = true;
             }
-            _boardIndex = 0;
-            return;
+            
+            // TODO game ends
         }
     }
 

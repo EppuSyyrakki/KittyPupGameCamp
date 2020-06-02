@@ -325,6 +325,12 @@ MonoBehaviour:
   _sr: {fileID: 436771692}
   _totalScore: 0
   _currentScore: 0
+  _scoreCountingEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _totalScoreCountingEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &649267626 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2960137404261634944, guid: 76a9890b52a94844090bcd29c3f161ef,
@@ -715,11 +721,6 @@ PrefabInstance:
       propertyPath: boardPositions.Array.data[14]
       value: 
       objectReference: {fileID: 805403335}
-    - target: {fileID: 2960137404261634944, guid: 76a9890b52a94844090bcd29c3f161ef,
-        type: 3}
-      propertyPath: _warningTimer
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2960137404261634945, guid: 76a9890b52a94844090bcd29c3f161ef,
         type: 3}
       propertyPath: m_LocalPosition.x

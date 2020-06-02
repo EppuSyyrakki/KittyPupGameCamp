@@ -70,19 +70,19 @@ public class Student : MonoBehaviour
 
         if (!_teacher.isWatching) _currentScore = Mathf.FloorToInt(_currentTime);
 
-        Debug.Log("The score to add is: " + _currentScore);
+        // Debug.Log("The score to add is: " + _currentScore);
     }
 
     private void CountTotalScore(int timesToAdd)
     {
-        Debug.Log("DO THE ADDITION! " + _totalScore + " + " + _currentScore);
+        // Debug.Log("DO THE ADDITION! " + _totalScore + " + " + _currentScore);
 
         _totalScore += _currentScore;
 
         _currentScore = 0;
         _currentTime = 0;
 
-        Debug.Log("Total Score: " + _totalScore + "(" + _currentScore + ")");
+        // Debug.Log("Total Score: " + _totalScore + "(" + _currentScore + ")");
 
     }
 
