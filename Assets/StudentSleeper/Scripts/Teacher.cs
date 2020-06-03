@@ -5,6 +5,10 @@ public class Teacher : MonoBehaviour
     public SpriteRenderer sr;
     public GameObject[] boardPositions;
     public GameObject writing;
+    public Sprite watching;
+    public Sprite notWatching;
+    public Sprite rage;
+    public Student student;
     public float _walkSpeed;
     public float _writingTimer;   
     public float _watchingTimer;
@@ -41,6 +45,8 @@ public class Teacher : MonoBehaviour
 
         if (_currentTime >= _actualWritingTimer && !isWatching) Watching();
 
+        if (isWatching && student._isSleeping) sr.sprite = rage;
+
         if (_currentTime >= _actualWatchingTimer && isWatching) NotWatching();
 
         if (!isDone) _currentTime += Time.deltaTime;
@@ -66,23 +72,22 @@ public class Teacher : MonoBehaviour
     {       
         _actualWatchingTimer = RandomizeTime(_watchingTimer - _currentDifficultyMultiplier) ;
 
-        if (_actualWatchingTimer < _minimumTime)
+        if (_actualWatchingTimer < _minimumTime)    // DEBUG
         {
             _actualWatchingTimer = _minimumTime;
-           // Debug.Log("minimum time reached.");
         }
 
         _currentDifficultyMultiplier += _difficultyMultiplier;
-        //Debug.Log("Watching time is " + _actualWatchingTimer);
-        //Debug.Log("current difficultyMultiplier is " + _currentDifficultyMultiplier);
-        sr.color = Color.red;   // TODO actual turning, warning sign, talking sound
+        sr.sprite = watching;   // talking sound
         isWatching = true;
         _currentTime = 0;
+
+        sr.color = Color.white; // DEBUG
     }
 
     private void WatchingSoon()
     {
-        sr.color = Color.yellow;
+        sr.color = Color.yellow; // DEBUG
     }
 
     private void NotWatching()
@@ -94,14 +99,16 @@ public class Teacher : MonoBehaviour
 
         //Debug.Log("Writing time is " + _actualWritingTimer);
         SpawnWriting();
-        sr.color = Color.white; // TODO actual turning, writing, talking & writing sounds
+        sr.sprite = notWatching; ; // TODO talking & writing sounds
         isWatching = false;
         _currentTime = 0;
+
+        sr.color = Color.white; // DEBUG
     }
 
     private void EndLecture()
     {
-        sr.color = Color.green;   // TODO turning without timer and no watching, ring sound
+        sr.sprite = watching;   // TODO ring sound
     }
 
     private float RandomizeTime(float time)
