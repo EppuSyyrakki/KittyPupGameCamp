@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &9353078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1911434221589455717, guid: 7d316da1ce57e3a44a2290854819a5d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6046516771290356545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b64481a735cbc84f9be08a576f63fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &322992780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4481005953734687866, guid: 412b678991fcbaa409f61e9c0859a941,
@@ -343,6 +355,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!82 &720356231 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 189226246, guid: 76a9890b52a94844090bcd29c3f161ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 2960137405434769069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &805403335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4481005953244019761, guid: 412b678991fcbaa409f61e9c0859a941,
@@ -472,6 +490,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4481005952601914787, guid: 412b678991fcbaa409f61e9c0859a941,
     type: 3}
   m_PrefabInstance: {fileID: 4481005954049263350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1465507644 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1536966928629146355, guid: 156cbd7738809af4d8ed51650305a3f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4810307689535766007}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1677166589 stripped
 GameObject:
@@ -897,8 +921,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Board
       objectReference: {fileID: 0}
+    - target: {fileID: 6649530059864131146, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649530059864131146, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649530059864131146, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5455078880426975575, guid: b2dccc0969e7b54438d0c9b0f85525c6,
+        type: 2}
+    - target: {fileID: 8834199258187152779, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834199258187152779, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834199258187152779, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412b678991fcbaa409f61e9c0859a941, type: 3}
+--- !u!82 &4481005954049263351 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6649530059864131146, guid: 412b678991fcbaa409f61e9c0859a941,
+    type: 3}
+  m_PrefabInstance: {fileID: 4481005954049263350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4810307689535766007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -918,6 +979,35 @@ PrefabInstance:
       propertyPath: _gamePosition
       value: 
       objectReference: {fileID: 2096748468}
+    - target: {fileID: 799528442, guid: 156cbd7738809af4d8ed51650305a3f0, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 9353078}
+    - target: {fileID: 3140965768386061139, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3140965768386061139, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3140965768386061139, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877577780695881335, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Source Sleeping
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810307689904301721, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 9353078}
     - target: {fileID: 4810307689904301721, guid: 156cbd7738809af4d8ed51650305a3f0,
         type: 3}
       propertyPath: _teacher
@@ -1002,10 +1092,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1911434221589455717, guid: 7d316da1ce57e3a44a2290854819a5d2,
+        type: 3}
+      propertyPath: student
+      value: 
+      objectReference: {fileID: 1759665098}
+    - target: {fileID: 1911434221589455717, guid: 7d316da1ce57e3a44a2290854819a5d2,
+        type: 3}
+      propertyPath: teacher
+      value: 
+      objectReference: {fileID: 649267626}
+    - target: {fileID: 1911434221589455717, guid: 7d316da1ce57e3a44a2290854819a5d2,
+        type: 3}
+      propertyPath: boardAudio
+      value: 
+      objectReference: {fileID: 4481005954049263351}
+    - target: {fileID: 1911434221589455717, guid: 7d316da1ce57e3a44a2290854819a5d2,
+        type: 3}
+      propertyPath: teacherAudio
+      value: 
+      objectReference: {fileID: 720356231}
+    - target: {fileID: 1911434221589455717, guid: 7d316da1ce57e3a44a2290854819a5d2,
+        type: 3}
+      propertyPath: studentAudio
+      value: 
+      objectReference: {fileID: 1465507644}
     - target: {fileID: 6046516770336749104, guid: 7d316da1ce57e3a44a2290854819a5d2,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: Main Camera / Audio
       objectReference: {fileID: 0}
     - target: {fileID: 6046516770336749109, guid: 7d316da1ce57e3a44a2290854819a5d2,
         type: 3}

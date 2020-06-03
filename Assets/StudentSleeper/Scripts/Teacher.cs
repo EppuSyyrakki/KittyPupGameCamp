@@ -2,6 +2,9 @@
 
 public class Teacher : MonoBehaviour
 {
+    public TeacherState state;
+    public bool isWatching { get; set; }
+    public bool isDone { get; set; }
     public SpriteRenderer sr;
     public GameObject[] boardPositions;
     public GameObject writing;
@@ -14,14 +17,13 @@ public class Teacher : MonoBehaviour
     public float _watchingTimer;
     public float _difficultyMultiplier;
     public float _minimumTime;
+    public float _rageTime;
     private float _currentDifficultyMultiplier;
     private float _actualWatchingTimer;
     private float _actualWritingTimer;
     private float _currentTime;
     private float _lerpT;
-    private int _boardIndex;
-    public bool isWatching { get; set; }
-    public bool isDone { get; set; }
+    private int _boardIndex; 
     private Vector3 lastPosition;
     private Vector3 nextPosition;
 
@@ -45,7 +47,7 @@ public class Teacher : MonoBehaviour
 
         if (_currentTime >= _actualWritingTimer && !isWatching) Watching();
 
-        if (isWatching && student._isSleeping) sr.sprite = rage;
+        if (isWatching && student._isSleeping) Raging();
 
         if (_currentTime >= _actualWatchingTimer && isWatching) NotWatching();
 
@@ -69,7 +71,8 @@ public class Teacher : MonoBehaviour
     }
 
     private void Watching()
-    {       
+    {
+        state = TeacherState.watching;
         _actualWatchingTimer = RandomizeTime(_watchingTimer - _currentDifficultyMultiplier) ;
 
         if (_actualWatchingTimer < _minimumTime)    // DEBUG
@@ -90,8 +93,15 @@ public class Teacher : MonoBehaviour
         sr.color = Color.yellow; // DEBUG
     }
 
+    private void Raging()
+    {
+        state = TeacherState.raging;
+        sr.sprite = rage;
+    }
+
     private void NotWatching()
     {
+        state = TeacherState.notWatching;
         DefineVectors();
         _actualWritingTimer = RandomizeTime(_writingTimer - _currentDifficultyMultiplier);
 
@@ -108,6 +118,7 @@ public class Teacher : MonoBehaviour
 
     private void EndLecture()
     {
+        state = TeacherState.done;
         sr.sprite = watching;   // TODO ring sound
     }
 
