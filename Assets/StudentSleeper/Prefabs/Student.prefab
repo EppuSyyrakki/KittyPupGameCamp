@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4810307689904301722}
   - component: {fileID: 4810307689904301723}
   - component: {fileID: 4810307689904301721}
-  - component: {fileID: 2505626728765918111}
+  - component: {fileID: 799528442}
   m_Layer: 11
   m_Name: Student
   m_TagString: Untagged
@@ -105,7 +105,10 @@ MonoBehaviour:
   _totalScoreCountingEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2505626728765918111
+  _startPosition: {fileID: 0}
+  _gamePosition: {fileID: 0}
+  _walkSpeed: 0.8
+--- !u!114 &799528442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _teacher: {fileID: 0}
-  _sr: {fileID: 0}
+  _sr: {fileID: 4810307689904301723}
   _totalScore: 0
   _currentScore: 0
   _scoreCountingEvent:
@@ -127,3 +130,6 @@ MonoBehaviour:
   _totalScoreCountingEvent:
     m_PersistentCalls:
       m_Calls: []
+  _startPosition: {fileID: 0}
+  _gamePosition: {fileID: 0}
+  _walkSpeed: 0.8

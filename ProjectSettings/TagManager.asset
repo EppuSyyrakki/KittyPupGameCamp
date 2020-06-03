@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Writing
+  - MarkZ
+  - StopHere
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Teacher
   - Student
   - Bubble
-  - 
+  - Floor
   - 
   - 
   - 

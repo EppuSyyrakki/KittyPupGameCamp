@@ -16,9 +16,9 @@ public class Student : MonoBehaviour
     public Teacher _teacher;
     public SpriteRenderer _sr;
 
-    public bool _isSleeping;
-    private bool _isTimeToIncrementTotal; 
-    public bool _isTeacherWatching;
+    public bool _isSleeping { get; set; }
+
+    public bool _isTeacherWatching { get; set; }
 
     public int _totalScore;
     public int _currentScore;
@@ -65,8 +65,6 @@ public class Student : MonoBehaviour
 
         HandleCurrentScoreEvent();
         HandleTotalScoreEvent();
-
-        Debug.Log("Total score: " + _totalScore);
 
         if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
     }
