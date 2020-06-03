@@ -69,12 +69,12 @@ public class Teacher : MonoBehaviour
         if (_actualWatchingTimer < _minimumTime)
         {
             _actualWatchingTimer = _minimumTime;
-            Debug.Log("minimum time reached.");
+           // Debug.Log("minimum time reached.");
         }
 
         _currentDifficultyMultiplier += _difficultyMultiplier;
-        Debug.Log("Watching time is " + _actualWatchingTimer);
-        Debug.Log("current difficultyMultiplier is " + _currentDifficultyMultiplier);
+        //Debug.Log("Watching time is " + _actualWatchingTimer);
+        //Debug.Log("current difficultyMultiplier is " + _currentDifficultyMultiplier);
         sr.color = Color.red;   // TODO actual turning, warning sign, talking sound
         isWatching = true;
         _currentTime = 0;
@@ -92,7 +92,7 @@ public class Teacher : MonoBehaviour
 
         if (_actualWritingTimer < _minimumTime) _actualWritingTimer = _minimumTime;
 
-        Debug.Log("Writing time is " + _actualWritingTimer);
+        //Debug.Log("Writing time is " + _actualWritingTimer);
         SpawnWriting();
         sr.color = Color.white; // TODO actual turning, writing, talking & writing sounds
         isWatching = false;

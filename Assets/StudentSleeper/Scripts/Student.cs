@@ -17,7 +17,8 @@ public class Student : MonoBehaviour
     public SpriteRenderer _sr;
 
     public bool _isSleeping;
-    private bool _isTimeToIncrementTotal;
+    private bool _isTimeToIncrementTotal; 
+    public bool _isTeacherWatching;
 
     public int _totalScore;
     public int _currentScore;
@@ -37,6 +38,14 @@ public class Student : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InitEventHandlers();
+        StudentBegin();
+        SetScoresToDefault();
+    }
+
+    private void InitEventHandlers()
+    {
+
         if (_scoreCountingEvent == null) _scoreCountingEvent = new MyIntEvent();
 
         if (_totalScoreCountingEvent == null) _totalScoreCountingEvent = new MyIntEvent();
@@ -44,60 +53,58 @@ public class Student : MonoBehaviour
         _scoreCountingEvent.AddListener(CountCurrentScore);
 
         _totalScoreCountingEvent.AddListener(CountTotalScore);
-
-        StudentBegin();
-        SetScoresToDefault();
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateTeacherWatchingBool();
+
         // user input (mouse button 0) sets student to sleep (down) or awake (up)
         SetToSleep();
 
-        if (_isSleeping && _scoreCountingEvent != null) _scoreCountingEvent.Invoke(1);
+        HandleCurrentScoreEvent();
+        HandleTotalScoreEvent();
 
+        Debug.Log("Total score: " + _totalScore);
+
+        if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
+    }
+
+    private void UpdateTeacherWatchingBool()
+    {
+        _isTeacherWatching = _teacher.isWatching;
+    }
+
+    private void HandleTotalScoreEvent()
+    {
         if (!_isSleeping)
         {
             if (_totalScoreCountingEvent != null) _totalScoreCountingEvent.Invoke(1);
-
             _currentScore = 0;
         }
-        if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
+    }
+
+    private void HandleCurrentScoreEvent()
+    {
+
+        if (_isSleeping && _scoreCountingEvent != null) _scoreCountingEvent.Invoke(1);
     }
 
     private void CountCurrentScore(int timesToAdd)
     {
         _currentTime += Time.deltaTime;
 
-        if (_teacher.isWatching) _currentScore = -Mathf.FloorToInt(_currentTime);
-
-        if (!_teacher.isWatching) _currentScore = Mathf.FloorToInt(_currentTime);
-
-        // Debug.Log("The score to add is: " + _currentScore);
+        if (_isTeacherWatching) _currentScore = -Mathf.FloorToInt(_currentTime);
+        if (!_isTeacherWatching) _currentScore = Mathf.FloorToInt(_currentTime);
     }
 
     private void CountTotalScore(int timesToAdd)
     {
-        // Debug.Log("DO THE ADDITION! " + _totalScore + " + " + _currentScore);
-
         _totalScore += _currentScore;
 
         _currentScore = 0;
         _currentTime = 0;
-
-        // Debug.Log("Total Score: " + _totalScore + "(" + _currentScore + ")");
-
-    }
-
-
-    private bool FreeToSleep()
-    {
-        if (_teacher.isWatching) 
-        {
-            return false; 
-        }
-        return true;
     }
 
     private void SetToSleep()

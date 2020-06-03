@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class SleepBubble : MonoBehaviour
 {
-    public SleepBubble _bubble;
     public GameObject _bubbleObject;
     public Student _student;
 
     public SpriteRenderer _sr;
 
     private bool _isVisible;
+    private bool _isTeacherWatching;
 
     public MyIntEvent _asleepEvent;
     public MyIntEvent _awakeEvent;
@@ -43,15 +43,38 @@ public class SleepBubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HandleSleepAndAwakeEvents();
+        UpdateTeacherWatchingBool();
+        ShowAndHideBubble();
+        SetBubbleColor();
+    }
+
+    private void UpdateTeacherWatchingBool()
+    {
+        _isTeacherWatching = _student._isTeacherWatching;
+    }
+
+    private void SetBubbleColor()
+    {
+        Color _defaultColor = new Color(0.981f, 0.963f, 0.963f, 0.61f);
+
+        Debug.Log("is teacher watching? " + _isTeacherWatching);
+
+        if (_isVisible && _isTeacherWatching) _sr.color = Color.red;
+        if (_isVisible && !_isTeacherWatching) _sr.color = _defaultColor;
+    }
+
+    private void HandleSleepAndAwakeEvents()
+    {
+
         if (_student._isSleeping) _asleepEvent.Invoke(1);
 
         if (!_student._isSleeping) _awakeEvent.Invoke(1);
-
-        showAndHideBubble();
     }
 
-    private void showAndHideBubble()
+    private void ShowAndHideBubble()
     {
+
         // render game object if visible, and not if not
         if (!_isVisible)
         {
@@ -61,6 +84,5 @@ public class SleepBubble : MonoBehaviour
         {
             _bubbleObject.GetComponent<Renderer>().enabled = true;
         }
-
     }
 }
