@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-6676820975761459165
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 0ed4120b24150774aa04ec734c2aa05f
+  m_EffectName: Attenuation
+  m_MixLevel: 76c6f59883ad30b4f81e28661df52b4c
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-5015440834832724393
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Student
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 15ecaaf91b6de5846986909aefa8f81e
+  m_Children: []
+  m_Volume: bb64da85a2924be429ca28e018e7c3be
+  m_Pitch: 8f42c07957d0f464b80b4ffa853cb8d8
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6676820975761459165}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -15,8 +48,15 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
-  m_AudioMixerGroupViews: []
+  m_ExposedParameters:
+  - guid: 7379441581f7cfa419f0d15185a7ceb0
+    name: Lowpass
+  m_AudioMixerGroupViews:
+  - guids:
+    - ae4e43f7c10aa15438c24087de36d638
+    - ed0039040215b2344bcc02aee43be092
+    - 15ecaaf91b6de5846986909aefa8f81e
+    name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
@@ -28,7 +68,9 @@ AudioMixerGroupController:
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: ae4e43f7c10aa15438c24087de36d638
-  m_Children: []
+  m_Children:
+  - {fileID: 5455078880426975575}
+  - {fileID: -5015440834832724393}
   m_Volume: c2ad032f8fdd9cf448be0125290fc558
   m_Pitch: ca1760c024c667f439990c4fff0fb0e0
   m_Send: 00000000000000000000000000000000
@@ -58,8 +100,63 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Normal
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 519fbc3d105a4d642aa26a16f6a47597
-  m_FloatValues: {}
+  m_FloatValues:
+    7379441581f7cfa419f0d15185a7ceb0: 22000
+    bb64da85a2924be429ca28e018e7c3be: 0.025578514
+    cff44c7b873e9fe4899de4054a4ab9b1: 0
   m_TransitionOverrides: {}
+--- !u!244 &2196514077759982012
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 21def2269205b8044a716d59c401fad7
+  m_EffectName: Attenuation
+  m_MixLevel: 8f532d0edf55e90408758cf002db49e2
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &5455078880426975575
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Teacher
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: ed0039040215b2344bcc02aee43be092
+  m_Children: []
+  m_Volume: 4f1979891b9231446a17d4f9a9131368
+  m_Pitch: 9655776864047b44089dbd5e77941f2a
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 2196514077759982012}
+  - {fileID: 6505712046997165264}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &6505712046997165264
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 77045b7b4e552da4f974fc7e4ca7c970
+  m_EffectName: Lowpass
+  m_MixLevel: cff44c7b873e9fe4899de4054a4ab9b1
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 7379441581f7cfa419f0d15185a7ceb0
+  - m_ParameterName: Resonance
+    m_GUID: b27922e95259ded4497c06ff6bbbaa7c
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 1
+  m_Bypass: 0

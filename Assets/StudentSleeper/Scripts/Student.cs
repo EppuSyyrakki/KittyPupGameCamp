@@ -13,6 +13,9 @@ public class MyIntEvent : UnityEvent<int>
 
 public class Student : MonoBehaviour
 {
+    public AudioManager audioManager;
+    // public AudioSource audioSource;
+
     public Teacher _teacher;
     public SpriteRenderer _sr;
 
@@ -114,13 +117,14 @@ public class Student : MonoBehaviour
             _isSleeping = true;
 
             _scoreCountingEvent.Invoke(1);
+            audioManager.Effect(true, 2);
         }
 
         if (Input.GetMouseButtonUp(0) && !_teacher.isDone)
         {
             _sr.color = Color.white;
             _isSleeping = false;
-
+            audioManager.Effect(false, 6);
         }
 
         if (_teacher.isDone)

@@ -96,3 +96,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b64481a735cbc84f9be08a576f63fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: b2dccc0969e7b54438d0c9b0f85525c6, type: 2}
+  student: {fileID: 0}
+  teacher: {fileID: 0}
+  teacherAudio: {fileID: 0}
+  studentAudio: {fileID: 0}
+  boardAudio: {fileID: 0}
+  teacherTalk: {fileID: 8300000, guid: a209fce067819da49987d982cd0487b4, type: 3}
+  teacherRage: {fileID: 8300000, guid: a67e82c9ced2da54c9e6239a8419b46a, type: 3}
+  teacherDone: {fileID: 8300000, guid: 6c029441c56621d498fa0d926c80d17c, type: 3}
+  sleeping: {fileID: 8300000, guid: ebccfd57e11233645a6ea6e8a1ab5bfd, type: 3}
+  waking: {fileID: 8300000, guid: 9c9f3b8287c30c2419d55c9615639957, type: 3}
+  writing: {fileID: 8300000, guid: 7faf5c72a3ba20240b38bb05ee2cfd63, type: 3}
+  _effect: 0
