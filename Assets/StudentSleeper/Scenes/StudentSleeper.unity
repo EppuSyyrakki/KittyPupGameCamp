@@ -960,6 +960,11 @@ PrefabInstance:
       objectReference: {fileID: 2096748468}
     - target: {fileID: 4810307689904301721, guid: 156cbd7738809af4d8ed51650305a3f0,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 9353078}
+    - target: {fileID: 4810307689904301721, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
       propertyPath: _teacher
       value: 
       objectReference: {fileID: 649267626}
