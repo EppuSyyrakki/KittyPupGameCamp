@@ -49,18 +49,16 @@ public class AudioManager : MonoBehaviour
                 teacherAudio.clip = teacherTalk;
                 changed = true;
             }
-        }
-        
-        if (teacher.state == TeacherState.raging)
+        } 
+        else if (teacher.state == TeacherState.raging)
         {
             if (teacherAudio.clip != teacherRage)
             {
                 teacherAudio.clip = teacherRage; 
                 changed = true;
             }
-        }
-
-        if (teacher.state == TeacherState.done)
+        } 
+        else if (teacher.state == TeacherState.done)
         {
             if (teacherAudio.clip != teacherDone)
             {
@@ -75,12 +73,21 @@ public class AudioManager : MonoBehaviour
     {
         bool changed = false;
 
-        if (student._isSleeping)
+        if (student._isSleeping && teacher.state == TeacherState.notWatching)
         {
             if (studentAudio.clip != studentSleeping)
             {
                 studentAudio.clip = studentSleeping;
                 studentAudio.loop = true;
+                changed = true;
+            }
+        }
+        else if (student._isSleeping && teacher.state == TeacherState.raging)
+        {
+            if (studentAudio.clip != studentWaking)
+            {
+                studentAudio.clip = studentWaking;
+                studentAudio.loop = false;
                 changed = true;
             }
         }
@@ -99,13 +106,13 @@ public class AudioManager : MonoBehaviour
 
     private void DoEffect()
     {
-        if (_effect && _lerpTime <= 1)
+        if (_effect && _lowpassT <= 1)
         {
             mixer.SetFloat("Lowpass", Mathf.Lerp(600, 22000, _lowpassT));
             _lowpassT = Time.deltaTime * _lerpTime;
         }
 
-        if (!_effect && _lerpTime <= 1)
+        if (!_effect && _lowpassT <= 1)
         {
             mixer.SetFloat("Lowpass", Mathf.Lerp(22000, 600, _lowpassT));
             _lowpassT = Time.deltaTime * _lerpTime;
@@ -117,5 +124,11 @@ public class AudioManager : MonoBehaviour
         _effect = effect;
         _lowpassT = 0;
         _lerpTime = time;
+    }
+
+    public void ChangeVolume(float volume)
+    {
+        volume = Mathf.Clamp(volume, -80f, 0f);
+        mixer.SetFloat("Master", volume);
     }
 }

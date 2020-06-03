@@ -14,7 +14,6 @@ public class MyIntEvent : UnityEvent<int>
 public class Student : MonoBehaviour
 {
     public AudioManager audioManager;
-    // public AudioSource audioSource;
 
     public Teacher _teacher;
     public SpriteRenderer _sr;
