@@ -12,9 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip teacherTalk;
     public AudioClip teacherRage;
     public AudioClip teacherDone;
-    public AudioClip sleeping;
-    public AudioClip waking;
-    public AudioClip writing;
+    public AudioClip studentSleeping;
+    public AudioClip studentWaking;
     public bool _effect;
     private float _lowpassT;
     private float _lerpTime;
@@ -22,7 +21,6 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boardAudio.clip = writing;
         _effect = false;
         teacherAudio.volume = 0.75f;    // FOR PROTO AUDIOS ONLY
     }
@@ -31,11 +29,12 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         bool teacherClipChanged = SetTeacherClip();
-        
+        bool studentClipChanged = CheckStudent();
+
         if (teacherClipChanged) teacherAudio.Play();
+        if (studentClipChanged) studentAudio.Play();
 
-
-
+        CheckWriting();
         DoEffect();
     }
 
@@ -69,6 +68,23 @@ public class AudioManager : MonoBehaviour
                 changed = true;
             }
         }
+        return changed;
+    }
+
+    private bool CheckStudent()
+    {
+        bool changed = false;
+
+        if (student._isSleeping)
+        {
+            if (studentAudio.clip != studentSleeping)
+            {
+                studentAudio.clip = studentSleeping;
+                studentAudio.loop = true;
+                changed = true;
+            }
+        }
+
         return changed;
     }
 

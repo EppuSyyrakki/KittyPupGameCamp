@@ -931,6 +931,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5455078880426975575, guid: b2dccc0969e7b54438d0c9b0f85525c6,
         type: 2}
+    - target: {fileID: 8834199258187152779, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834199258187152779, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834199258187152779, guid: 412b678991fcbaa409f61e9c0859a941,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412b678991fcbaa409f61e9c0859a941, type: 3}
 --- !u!82 &4481005954049263351 stripped
@@ -958,6 +973,26 @@ PrefabInstance:
       propertyPath: _gamePosition
       value: 
       objectReference: {fileID: 2096748468}
+    - target: {fileID: 3140965768386061139, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3140965768386061139, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3140965768386061139, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877577780695881335, guid: 156cbd7738809af4d8ed51650305a3f0,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Source Sleeping
+      objectReference: {fileID: 0}
     - target: {fileID: 4810307689904301721, guid: 156cbd7738809af4d8ed51650305a3f0,
         type: 3}
       propertyPath: audioManager
