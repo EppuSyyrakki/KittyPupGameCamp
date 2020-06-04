@@ -113,7 +113,7 @@ public class Teacher : MonoBehaviour
         isWatching = false;
         _currentTime = 0;
 
-        sr.color = Color.white; // DEBUG
+        sr.color = Color.black; // DEBUG
     }
 
     private void EndLecture()
