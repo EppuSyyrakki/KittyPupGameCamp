@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         _effect = false;
-        // boardAudio.volume = 0.2f;
+        boardAudio.volume = 0.2f;
         teacherAudio.volume = 0.5f;    // FOR PROTO AUDIOS ONLY
     }
 
