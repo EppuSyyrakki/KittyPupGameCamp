@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip teacherDone;
     public AudioClip studentSleeping;
     public AudioClip studentWaking;
+    public UISystem ui;
     public bool _effect;
     private float _lowpassT;
     private float _lerpTime;
@@ -29,14 +30,16 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool teacherClipChanged = SetTeacherClip();
-        bool studentClipChanged = CheckStudent();
+        if (ui.gameStarted) { 
+            bool teacherClipChanged = SetTeacherClip();
+            bool studentClipChanged = CheckStudent();
 
-        if (teacherClipChanged) teacherAudio.Play();
-        if (studentClipChanged) studentAudio.Play();
+            if (teacherClipChanged) teacherAudio.Play();
+            if (studentClipChanged) studentAudio.Play();
 
-        CheckWriting();
-        DoEffect();
+            CheckWriting();
+            DoEffect();
+        }
     }
 
     private bool SetTeacherClip()

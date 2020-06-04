@@ -13,8 +13,8 @@ public class MyIntEvent : UnityEvent<int>
 
 public class Student : MonoBehaviour
 {
-    public AudioManager audioManager;
-
+    public AudioManager _audioManager;
+    public UISystem _ui;
     public Teacher _teacher;
     public SpriteRenderer _sr;
 
@@ -60,15 +60,17 @@ public class Student : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateTeacherWatchingBool();
+        if (_ui.gameStarted) { 
+            UpdateTeacherWatchingBool();
 
-        // user input (mouse button 0) sets student to sleep (down) or awake (up)
-        SetToSleep();
+            // user input (mouse button 0) sets student to sleep (down) or awake (up)
+            SetToSleep();
 
-        HandleCurrentScoreEvent();
-        HandleTotalScoreEvent();
+            HandleCurrentScoreEvent();
+            HandleTotalScoreEvent();
 
-        if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
+            if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
+        }
     }
 
     private void UpdateTeacherWatchingBool()
@@ -116,14 +118,14 @@ public class Student : MonoBehaviour
             _isSleeping = true;
 
             _scoreCountingEvent.Invoke(1);
-            audioManager.Effect(true, 0.001f);
+            _audioManager.Effect(true, 0.001f);
         }
 
         if (Input.GetMouseButtonUp(0) && !_teacher.isDone)
         {
             _sr.color = Color.white;
             _isSleeping = false;
-            audioManager.Effect(false, 2);
+            _audioManager.Effect(false, 2);
         }
 
         if (_teacher.isDone)

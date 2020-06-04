@@ -5,6 +5,7 @@ public class Teacher : MonoBehaviour
     public TeacherState state;
     public bool isWatching { get; set; }
     public bool isDone { get; set; }
+    public UISystem ui;
     public SpriteRenderer sr;
     public GameObject[] boardPositions;
     public GameObject writing;
@@ -41,21 +42,21 @@ public class Teacher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log("boardIndex is " + _boardIndex);
+        if (ui.gameStarted) { 
+            if (_currentTime >= _actualWritingTimer * 0.9f && !isWatching) WatchingSoon();
 
-        if (_currentTime >= _actualWritingTimer * 0.9f && !isWatching) WatchingSoon();
+            if (_currentTime >= _actualWritingTimer && !isWatching) Watching();
 
-        if (_currentTime >= _actualWritingTimer && !isWatching) Watching();
+            if (isWatching && student._isSleeping) Raging();
 
-        if (isWatching && student._isSleeping) Raging();
+            if (_currentTime >= _actualWatchingTimer && isWatching) NotWatching();
 
-        if (_currentTime >= _actualWatchingTimer && isWatching) NotWatching();
+            if (!isDone) _currentTime += Time.deltaTime;
+            else EndLecture();
 
-        if (!isDone) _currentTime += Time.deltaTime;
-        else EndLecture();
-
-        if (transform.position.x != nextPosition.x) Walk();
-        else _lerpT = 0;
+            if (transform.position.x != nextPosition.x) Walk();
+            else _lerpT = 0;
+        }
     }
 
     private void Enter()
