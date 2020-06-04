@@ -116,7 +116,7 @@ public class Student : MonoBehaviour
             _isSleeping = true;
 
             _scoreCountingEvent.Invoke(1);
-            audioManager.Effect(true, 0.01f);
+            audioManager.Effect(true, 0.001f);
         }
 
         if (Input.GetMouseButtonUp(0) && !_teacher.isDone)
