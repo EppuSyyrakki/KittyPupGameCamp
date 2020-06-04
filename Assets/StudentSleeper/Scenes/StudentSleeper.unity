@@ -227,76 +227,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_text
-      value: 'Total score: '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_fontStyle
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.2901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.18823531
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.8470589
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4292358218
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989560012224049, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 610995464, guid: 08b8cdfc8621282449f1570de0109110, type: 3}
+      propertyPath: _student
+      value: 
+      objectReference: {fileID: 1759665098}
     - target: {fileID: 4220989560266119489, guid: 08b8cdfc8621282449f1570de0109110,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -407,66 +341,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4220989560321108752, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989560321108752, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989560321108752, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989560321108752, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989560656264792, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989561168046610, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989561168046610, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989561168046610, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220989561168046610, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669563032282004304, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669563032282004304, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -200
-      objectReference: {fileID: 0}
-    - target: {fileID: 9045700719478182477, guid: 08b8cdfc8621282449f1570de0109110,
-        type: 3}
-      propertyPath: m_Name
-      value: Total Score text
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b8cdfc8621282449f1570de0109110, type: 3}
 --- !u!114 &610995461 stripped
@@ -487,36 +361,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 610995460}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &610995463 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3304771942225118722, guid: 08b8cdfc8621282449f1570de0109110,
-    type: 3}
-  m_PrefabInstance: {fileID: 610995460}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610995462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &610995464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610995462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33de91c772dfe245a4c1e3d26168542, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _textObj: {fileID: 610995462}
-  _student: {fileID: 1759665098}
-  _isVisible: 0
-  _scoreText: {fileID: 610995463}
-  _scoreFormat: 'Total score: {0}'
-  _score: 0
 --- !u!114 &649267626 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2960137404261634944, guid: 76a9890b52a94844090bcd29c3f161ef,

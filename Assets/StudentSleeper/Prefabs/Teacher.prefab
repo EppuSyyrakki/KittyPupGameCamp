@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c815add6ec05927408a139737929a145, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3209509251731684fb8f6c052a0e042a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,8 +244,8 @@ MonoBehaviour:
   - {fileID: 0}
   writing: {fileID: 6555106796458630111, guid: d36291833c7cb9a41b515bb4664b593a, type: 3}
   watching: {fileID: 21300000, guid: 238551d7edb26ad4689b5179a8b6bae3, type: 3}
-  notWatching: {fileID: 21300000, guid: c815add6ec05927408a139737929a145, type: 3}
-  rage: {fileID: 21300000, guid: 554461ef8d6e52f42b6cdaec7d6c0df5, type: 3}
+  notWatching: {fileID: 21300000, guid: 3209509251731684fb8f6c052a0e042a, type: 3}
+  rage: {fileID: 21300000, guid: bfa10f62a0bf06a4a9e55805daa85ffb, type: 3}
   student: {fileID: 0}
   _walkSpeed: 0.8
   _writingTimer: 6
