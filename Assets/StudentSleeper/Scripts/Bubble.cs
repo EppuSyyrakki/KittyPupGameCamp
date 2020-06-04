@@ -13,6 +13,7 @@ public class Bubble : MonoBehaviour
         scored
     };
     private State state;
+
     public GameObject[] positions;
     public Student student;
     public Teacher teacher;
@@ -27,6 +28,11 @@ public class Bubble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Initialize();
+    }
+
+    private void Initialize()
+    {
         transparent = new Color(1, 1, 1, 0);
         halfTransparent = new Color(1, 1, 1, 0.3f);
         sr.color = transparent;
@@ -37,11 +43,16 @@ public class Bubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateState();
+    }
+
+    private void UpdateState()
+    {
         if (student._isSleeping && teacher.state == TeacherState.notWatching)
         {
             state = State.charging;
             Charging();
-        } 
+        }
         else if (student._isSleeping && teacher.state == TeacherState.raging && state == State.charging)
         {
             state = State.dropped;
@@ -77,6 +88,7 @@ public class Bubble : MonoBehaviour
 
         foreach (GameObject zTmp in allZ)
         {
+            Random.InitState(Random.Range(1, 10));
             Rigidbody rb = zTmp.GetComponent<Rigidbody>();
             SpriteFader sf = zTmp.GetComponent<SpriteFader>();
             rb.useGravity = true;
@@ -98,7 +110,7 @@ public class Bubble : MonoBehaviour
             Rigidbody rb = zTmp.GetComponent<Rigidbody>();
             SpriteFader sf = zTmp.GetComponent<SpriteFader>();
             rb.useGravity = true;
-            rb.AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 0f), Random.Range(-1f, 1f)));
+            rb.AddForce(new Vector3(Random.Range(-3f, 3f), Random.Range(-1f, 0f), Random.Range(-1f, 1f)));
             sf.fadingOut = true;
         }
         allZ.Clear();
