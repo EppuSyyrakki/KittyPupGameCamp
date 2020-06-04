@@ -33,7 +33,7 @@ public class SpriteFader : MonoBehaviour
 
     private bool Fade(int start, int stop)
     {
-        Color whiteAlpha = new Color(1, 1, 1, Mathf.Lerp(start, stop, _t));
+        Color whiteAlpha = new Color(0, 0, 0, Mathf.Lerp(start, stop, _t));
         sr.color = whiteAlpha;
 
         if (_t >= 1) {_t = 0; return false;}

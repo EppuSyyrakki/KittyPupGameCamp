@@ -30,12 +30,14 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ui.gameStarted) { 
+        if (ui.gameStarted) {
+            if (!student._isSleeping && studentAudio == studentSleeping) studentAudio.Stop();
+
             bool teacherClipChanged = SetTeacherClip();
             bool studentClipChanged = CheckStudent();
 
             if (teacherClipChanged) teacherAudio.Play();
-            if (studentClipChanged) studentAudio.Play();
+            if (studentClipChanged) studentAudio.Play();            
 
             CheckWriting();
             DoEffect();
@@ -90,13 +92,22 @@ public class AudioManager : MonoBehaviour
         {
             if (studentAudio.clip != studentWaking)
             {
+                studentAudio.Stop();
                 studentAudio.clip = studentWaking;
                 studentAudio.loop = false;
                 changed = true;
             }
         }
-        else if (!student._isSleeping && studentAudio == studentSleeping) studentAudio.Stop();
-
+        else if (!student._isSleeping && teacher.state == TeacherState.notWatching)
+        {
+            if (studentAudio.clip != studentWaking)
+            {
+                studentAudio.Stop();
+                studentAudio.Stop();
+                studentAudio.clip = studentWaking;
+                studentAudio.loop = false;
+            }
+        }
         return changed;
     }
 
