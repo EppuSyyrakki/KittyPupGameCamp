@@ -49,6 +49,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: c2ad032f8fdd9cf448be0125290fc558
+    name: Master
   - guid: 7379441581f7cfa419f0d15185a7ceb0
     name: Lowpass
   m_AudioMixerGroupViews:
@@ -107,6 +109,7 @@ AudioMixerSnapshotController:
     7379441581f7cfa419f0d15185a7ceb0: 22000
     bb64da85a2924be429ca28e018e7c3be: 0.025578514
     cff44c7b873e9fe4899de4054a4ab9b1: 0
+    c2ad032f8fdd9cf448be0125290fc558: 0.5
   m_TransitionOverrides: {}
 --- !u!244 &2196514077759982012
 AudioMixerEffectController:

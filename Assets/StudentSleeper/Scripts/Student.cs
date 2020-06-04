@@ -116,14 +116,14 @@ public class Student : MonoBehaviour
             _isSleeping = true;
 
             _scoreCountingEvent.Invoke(1);
-            audioManager.Effect(true, 2);
+            audioManager.Effect(true, 0.5f);
         }
 
         if (Input.GetMouseButtonUp(0) && !_teacher.isDone)
         {
             _sr.color = Color.white;
             _isSleeping = false;
-            audioManager.Effect(false, 6);
+            audioManager.Effect(false, 2);
         }
 
         if (_teacher.isDone)

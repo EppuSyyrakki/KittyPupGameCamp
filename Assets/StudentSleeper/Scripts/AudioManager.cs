@@ -22,7 +22,8 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         _effect = false;
-        teacherAudio.volume = 0.75f;    // FOR PROTO AUDIOS ONLY
+        boardAudio.volume = 0.2f;
+        teacherAudio.volume = 0.5f;    // FOR PROTO AUDIOS ONLY
     }
 
     // Update is called once per frame

@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0e30f7bc7d97da4409d15ccd2b66dc3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c815add6ec05927408a139737929a145, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -224,8 +224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  audioManager: {fileID: 0}
-  audioSource: {fileID: 0}
   sr: {fileID: 2960137404261634950}
   boardPositions:
   - {fileID: 0}
@@ -244,9 +242,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   writing: {fileID: 6555106796458630111, guid: d36291833c7cb9a41b515bb4664b593a, type: 3}
-  watching: {fileID: 21300000, guid: 7fe85df7830b0ef4784c2fbb812c0862, type: 3}
-  notWatching: {fileID: 21300000, guid: 0e30f7bc7d97da4409d15ccd2b66dc3f, type: 3}
-  rage: {fileID: 21300000, guid: 972e94863a48dc94b82d0823a848f23a, type: 3}
+  watching: {fileID: 21300000, guid: 238551d7edb26ad4689b5179a8b6bae3, type: 3}
+  notWatching: {fileID: 21300000, guid: c815add6ec05927408a139737929a145, type: 3}
+  rage: {fileID: 21300000, guid: 554461ef8d6e52f42b6cdaec7d6c0df5, type: 3}
   student: {fileID: 0}
   _walkSpeed: 0.8
   _writingTimer: 6
