@@ -69,7 +69,7 @@ public class Student : MonoBehaviour
             HandleCurrentScoreEvent();
             HandleTotalScoreEvent();
 
-            if (transform.position != _gamePosition.position && !_teacher.isDone) Walk(_startPosition, _gamePosition);
+            if (transform.position != _gamePosition.position && _teacher.state != TeacherState.done) Walk(_startPosition, _gamePosition);
         }
     }
 
@@ -111,7 +111,7 @@ public class Student : MonoBehaviour
 
     private void SetToSleep()
     {
-        if (Input.GetMouseButtonDown(0) && !_teacher.isDone)
+        if (Input.GetMouseButtonDown(0) && _teacher.state != TeacherState.done)
         {
             _currentScore = 0;
             _sr.color = Color.blue;
@@ -121,14 +121,14 @@ public class Student : MonoBehaviour
             _audioManager.Effect(true, 0.001f);
         }
 
-        if (Input.GetMouseButtonUp(0) && !_teacher.isDone)
+        if (Input.GetMouseButtonUp(0) && _teacher.state != TeacherState.done)
         {
             _sr.color = Color.white;
             _isSleeping = false;
             _audioManager.Effect(false, 2);
         }
 
-        if (_teacher.isDone)
+        if (_teacher.state == TeacherState.done)
         {
             _sr.flipX = true;
             Walk(_gamePosition, _startPosition);
@@ -152,6 +152,7 @@ public class Student : MonoBehaviour
         transform.position = Vector3.Lerp(from.position, to.position, _lerpT);
         _lerpT += Time.deltaTime * _walkSpeed;
 
-        if (transform.position == to.position && !_teacher.isDone) _lerpT = 0;
+        if (_teacher.state != TeacherState.done)
+            if (transform.position == to.position) _lerpT = 0;
     }
 }

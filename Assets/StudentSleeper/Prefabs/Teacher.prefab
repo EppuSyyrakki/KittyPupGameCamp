@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  ui: {fileID: 0}
   sr: {fileID: 2960137404261634950}
   boardPositions:
   - {fileID: 0}
@@ -248,7 +249,7 @@ MonoBehaviour:
   student: {fileID: 0}
   _walkSpeed: 0.8
   _writingTimer: 6
-  _watchingTimer: 10
+  _watchingTimer: 8
   _difficultyMultiplier: 0.2
   _minimumTime: 0
   _rageTime: 0

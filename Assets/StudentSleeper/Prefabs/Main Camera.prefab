@@ -104,7 +104,9 @@ MonoBehaviour:
   boardAudio: {fileID: 0}
   teacherTalk: {fileID: 8300000, guid: a209fce067819da49987d982cd0487b4, type: 3}
   teacherRage: {fileID: 8300000, guid: a67e82c9ced2da54c9e6239a8419b46a, type: 3}
-  teacherDone: {fileID: 8300000, guid: 6c029441c56621d498fa0d926c80d17c, type: 3}
+  teacherDone: {fileID: 8300000, guid: 253cbe3a2a5ca444d8eabd508158e43b, type: 3}
   studentSleeping: {fileID: 8300000, guid: ebccfd57e11233645a6ea6e8a1ab5bfd, type: 3}
   studentWaking: {fileID: 8300000, guid: 9c9f3b8287c30c2419d55c9615639957, type: 3}
+  bell: {fileID: 8300000, guid: 98db7d6c02eb46a48b0e20cd613da8de, type: 3}
+  ui: {fileID: 0}
   _effect: 0

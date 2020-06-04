@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource teacherAudio;
     public AudioSource studentAudio;
     public AudioSource boardAudio;
+    public AudioSource bellAudio;
     public AudioClip teacherTalk;
     public AudioClip teacherRage;
     public AudioClip teacherDone;
@@ -18,29 +19,37 @@ public class AudioManager : MonoBehaviour
     public bool _effect;
     private float _lowpassT;
     private float _lerpTime;
+    private bool bellHasPlayed = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        teacherAudio.loop = true;
         _effect = false;
-        boardAudio.volume = 0.2f;
-        teacherAudio.volume = 0.5f;    // FOR PROTO AUDIOS ONLY
+        boardAudio.volume = 0.5f;
+        teacherAudio.volume = 0.5f;
+        bellAudio.volume = 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (ui.gameStarted) {
+            CheckWriting();
+            DoEffect();
+
             if (!student._isSleeping && studentAudio == studentSleeping) studentAudio.Stop();
 
             bool teacherClipChanged = SetTeacherClip();
             bool studentClipChanged = CheckStudent();
 
             if (teacherClipChanged) teacherAudio.Play();
-            if (studentClipChanged) studentAudio.Play();            
-
-            CheckWriting();
-            DoEffect();
+            if (studentClipChanged) studentAudio.Play();
+            if (teacher.state == TeacherState.done && !bellAudio.isPlaying && !bellHasPlayed)
+            {
+                bellAudio.Play();
+                bellHasPlayed = true;
+            }
         }
     }
 
@@ -60,16 +69,19 @@ public class AudioManager : MonoBehaviour
         {
             if (teacherAudio.clip != teacherRage)
             {
-                teacherAudio.clip = teacherRage; 
+                teacherAudio.clip = teacherRage;
                 changed = true;
             }
         } 
-        else if (teacher.state == TeacherState.done)
+        
+        if (teacher.state == TeacherState.done)
         {
             if (teacherAudio.clip != teacherDone)
             {
+                teacherAudio.Stop();
                 teacherAudio.clip = teacherDone;
-                changed = true;
+                teacherAudio.loop = false;
+                changed = true;              
             }
         }
         return changed;
@@ -100,13 +112,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (!student._isSleeping && teacher.state == TeacherState.notWatching)
         {
-            if (studentAudio.clip != studentWaking)
-            {
-                studentAudio.Stop();
-                studentAudio.Stop();
-                studentAudio.clip = studentWaking;
-                studentAudio.loop = false;
-            }
+            if (studentAudio.clip == studentSleeping) studentAudio.Stop();
         }
         return changed;
     }
@@ -117,7 +123,8 @@ public class AudioManager : MonoBehaviour
         {
             if (!boardAudio.isPlaying) boardAudio.Play();
         }
-        else boardAudio.Stop();
+        
+        if (teacher.state == TeacherState.watching || teacher.state == TeacherState.raging) boardAudio.Stop();
     }
 
     private void DoEffect()

@@ -4,7 +4,6 @@ public class Teacher : MonoBehaviour
 {
     public TeacherState state;
     public bool isWatching { get; set; }
-    public bool isDone { get; set; }
     public UISystem ui;
     public SpriteRenderer sr;
     public GameObject[] boardPositions;
@@ -32,7 +31,6 @@ public class Teacher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isDone = false;
         lastPosition = transform.position;
         nextPosition = new Vector3(boardPositions[_boardIndex].transform.position.x, transform.position.y, transform.position.z);
         _boardIndex = 0;
@@ -51,7 +49,7 @@ public class Teacher : MonoBehaviour
 
             if (_currentTime >= _actualWatchingTimer && isWatching) NotWatching();
 
-            if (!isDone) _currentTime += Time.deltaTime;
+            if (state != TeacherState.done) _currentTime += Time.deltaTime;
             else EndLecture();
 
             if (transform.position.x != nextPosition.x) Walk();
@@ -76,17 +74,12 @@ public class Teacher : MonoBehaviour
         state = TeacherState.watching;
         _actualWatchingTimer = RandomizeTime(_watchingTimer - _currentDifficultyMultiplier) ;
 
-        if (_actualWatchingTimer < _minimumTime)    // DEBUG
-        {
-            _actualWatchingTimer = _minimumTime;
-        }
-
         _currentDifficultyMultiplier += _difficultyMultiplier;
-        sr.sprite = watching;   // talking sound
+        sr.sprite = watching;
         isWatching = true;
         _currentTime = 0;
 
-        sr.color = Color.white; // DEBUG
+        sr.color = Color.white; 
     }
 
     private void WatchingSoon()
@@ -108,9 +101,8 @@ public class Teacher : MonoBehaviour
 
         if (_actualWritingTimer < _minimumTime) _actualWritingTimer = _minimumTime;
 
-        //Debug.Log("Writing time is " + _actualWritingTimer);
         SpawnWriting();
-        sr.sprite = notWatching; ; // TODO talking & writing sounds
+        sr.sprite = notWatching; ;
         isWatching = false;
         _currentTime = 0;
 
@@ -118,8 +110,7 @@ public class Teacher : MonoBehaviour
 
     private void EndLecture()
     {
-        state = TeacherState.done;
-        sr.sprite = watching;   // TODO ring sound
+        sr.sprite = watching; 
     }
 
     private float RandomizeTime(float time)
@@ -142,15 +133,14 @@ public class Teacher : MonoBehaviour
         } 
         else
         {
+            state = TeacherState.done;
             GameObject[] allWritings = GameObject.FindGameObjectsWithTag("Writing");
 
             for (int i = 0; i < allWritings.Length; i++)
             {
                 SpriteFader sf = allWritings[i].GetComponent<SpriteFader>();
                 sf.fadingOut = true;
-            }
-
-            isDone = true;
+            } 
         }
     }
 
