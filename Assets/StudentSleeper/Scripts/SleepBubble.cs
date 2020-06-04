@@ -27,7 +27,7 @@ public class SleepBubble : MonoBehaviour
 
     public MyIntEvent _asleepEvent;
     public MyIntEvent _awakeEvent;
-    //public MyIntEvent _fallOkEvent;
+    public MyIntEvent _fallOkEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -51,16 +51,18 @@ public class SleepBubble : MonoBehaviour
         if (_awakeEvent == null) _awakeEvent = new MyIntEvent();
         _awakeEvent.AddListener(SetInvisible);
 
-        //if (_fallOkEvent == null) _fallOkEvent = new MyIntEvent();
-        //_fallOkEvent.AddListener(SetFallOk);
+        if (_fallOkEvent == null) _fallOkEvent = new MyIntEvent();
+        _fallOkEvent.AddListener(SetFallOk);
     }
 
     // not working at the moment
     private void SetFallOk(int _timesToExecute)
     {
-        if(!_isTeacherWatching && !_isFallOk)
+        Debug.Log("is Teacher WATCHING? " + _isTeacherWatching + "is fall ok? " + _isFallOk);
+        if(!_isFallOk)
         {
             _isFallOk = true;
+            Debug.Log("Is fall ok? " + _isFallOk);
         }
     }
 
@@ -95,11 +97,10 @@ public class SleepBubble : MonoBehaviour
         if (_score < 0) DestroyZMarks();
 
         if (!_isVisible) DestroyZMarks();
-        //else Debug.Log("VISIBLE!!! MF!!");
 
         // Does not work as it should. 
         // Object end up in the ground at the wrong moment and in way too big size.
-        //if (!_isVisible && _isFallOk) Fall();
+        if (!_isVisible && _isFallOk) Fall();
     }
 
     // not working at the moment
@@ -175,8 +176,10 @@ public class SleepBubble : MonoBehaviour
 
         if (!_student._isSleeping) _awakeEvent.Invoke(1);
 
+
+        Debug.Log("Event handler: is Teacher WATCHING? " + _isTeacherWatching);
         // doesn't work as the teacher is watching even if not
-        //if (_isTeacherWatching) _fallOkEvent.Invoke(1);
+        if (!_isTeacherWatching) _fallOkEvent.Invoke(1);
     }
 
     private void ShowAndHideBubble()
