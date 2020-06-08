@@ -5,8 +5,8 @@ public class Target : MonoBehaviour
 {
     public GameObject[] allPresets;
    
-    [NonSerialized] public GameObject targetSandwich;
-    [NonSerialized] public Transform[] positions;
+    [NonSerialized] public GameObject targetSandwich;   // nonserialized public is public but doesn't show up in editor
+    [NonSerialized] public Transform[] positions;       // no need for these to be seen in editor.
 
     // Start is called before the first frame update
     void Start()
@@ -36,9 +36,10 @@ public class Target : MonoBehaviour
 
         for (int i = 0; i < targetSandwich.transform.childCount; i++)
         {
-            GameObject pos = new GameObject("targetPos " + i);
+            GameObject pos = new GameObject(targetSandwich.transform.GetChild(i).name);
             pos.transform.position = highestPos.position + new Vector3(0, -i * stepDifference, 0);
             positions[i] = pos.transform;
+            positions[i].transform.SetParent(gameObject.transform);
         }
         return positions;
     }
