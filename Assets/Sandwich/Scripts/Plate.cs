@@ -9,7 +9,7 @@ public class Plate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mySandwich = new Sandwich(new Stack<GameObject>());
+        
     }
 
     // Update is called once per frame
