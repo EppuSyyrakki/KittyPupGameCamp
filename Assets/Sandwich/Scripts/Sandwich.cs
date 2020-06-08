@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Sandwich : MonoBehaviour
 {
-    Stack<Ingredient> ingredients;
+    Stack<GameObject> ingredients;
 
-    public Sandwich(Stack<Ingredient> ingredients)
+    public Sandwich(Stack<GameObject> ingredients)
     {
         this.ingredients = ingredients;
     }
 
-    public void AddIngredient(Ingredient ingredientToAdd)
+    public void AddIngredient(GameObject ingredientToAdd)
     {
         ingredients.Push(ingredientToAdd);
     }

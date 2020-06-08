@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 6419304955098003950}
   - component: {fileID: 6419304955098003945}
   - component: {fileID: 6419304955098003944}
-  - component: {fileID: 6419304955098003947}
   - component: {fileID: 2524160564349768466}
   m_Layer: 0
   m_Name: Bun
-  m_TagString: Untagged
+  m_TagString: Bun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,20 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6419304955098003947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419304955098003946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9621d7d95721c0f47b2b80f4b7e17c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  materialName: Bun
 --- !u!54 &2524160564349768466
 Rigidbody:
   m_ObjectHideFlags: 0

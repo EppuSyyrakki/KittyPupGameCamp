@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 6631232470155043859}
   - component: {fileID: 6184977683553399113}
   - component: {fileID: 7021532134683364935}
-  - component: {fileID: 2648890076434637781}
   - component: {fileID: 3673695506165316323}
   m_Layer: 0
   m_Name: UnderBun
-  m_TagString: Untagged
+  m_TagString: UnderBun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,20 +94,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2648890076434637781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660442324836804074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9621d7d95721c0f47b2b80f4b7e17c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  materialName: UnderBun
 --- !u!54 &3673695506165316323
 Rigidbody:
   m_ObjectHideFlags: 0
