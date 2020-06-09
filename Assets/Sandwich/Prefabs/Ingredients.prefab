@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 889543360785787109}
   - component: {fileID: 889543360785787130}
   - component: {fileID: 889543360785787131}
-  - component: {fileID: 716565469140921113}
+  - component: {fileID: 1788031195}
   m_Layer: 0
   m_Name: Ingredients
   m_TagString: Untagged
@@ -97,7 +97,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &716565469140921113
+--- !u!114 &1788031195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +109,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981bb91dbfe090a4e912635c24291657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _allIngredients:
+  - {fileID: 6419304955098003946, guid: f0245be16a0a31444a23e4f3a87907f7, type: 3}
+  - {fileID: 5436287406372322483, guid: 9e52992fa47a81d43bb63f541a37b9a8, type: 3}
+  - {fileID: 3642234955374922297, guid: bd7ac60a6e76616498a56a1155dfc185, type: 3}
+  - {fileID: 3499896218544482006, guid: 4a7d5830453051c4c9b3992112af73ab, type: 3}
+  - {fileID: 1660442324836804074, guid: 20b2cffc9f3486046838b9ae07c05e1d, type: 3}
+  _spawningPos: {fileID: 6529860315047936554}
+  _destroyPos: {fileID: 371777642433513558}
+  _speed: 0.008
 --- !u!1 &3911254050902104452
 GameObject:
   m_ObjectHideFlags: 0
