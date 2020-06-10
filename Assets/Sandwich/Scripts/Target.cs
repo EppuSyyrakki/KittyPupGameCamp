@@ -13,8 +13,8 @@ public class Target : MonoBehaviour
     void Start()
     {
         targetSandwich = GetTargetSandwich();
-        positions = GetPositions(targetSandwich.transform.childCount);
-        InstantiateTarget();
+        positions = GetPositions(targetSandwich.transform.childCount);  // create new emptys according to ingredient count of preset
+        InstantiateTarget();       
     }
 
     private GameObject GetTargetSandwich()
@@ -31,16 +31,16 @@ public class Target : MonoBehaviour
     private Transform[] GetPositions(int ingredientCount)
     {
         Transform[] positions = new Transform[targetSandwich.transform.childCount];
-        Transform lowestPos = transform.GetChild(0);
-        Transform highestPos = transform.GetChild(1);
-        float stepDifference = (highestPos.position.y - lowestPos.position.y) / (ingredientCount - 1);
+        Transform lowestPos = transform.GetChild(0);        // divide the space between highest and lowest positions to accommodate
+        Transform highestPos = transform.GetChild(1);       // all ingredients (more ingredients, the closer together they are)
+        float stepDifference = (highestPos.position.y - lowestPos.position.y) / (ingredientCount - 1);  
 
         for (int i = 0; i < targetSandwich.transform.childCount; i++)
         {
             GameObject pos = new GameObject(targetSandwich.transform.GetChild(i).name + "Pos");
-            pos.transform.position = highestPos.position + new Vector3(0, -i * stepDifference, 0);
+            pos.transform.position = highestPos.position + new Vector3(0, -i * stepDifference, 0);  // choose the correct position
             positions[i] = pos.transform;
-            positions[i].transform.SetParent(gameObject.transform);
+            positions[i].transform.SetParent(gameObject.transform); // change the parent to be the this, not the highest/lowest
         }
         return positions;
     }
@@ -50,9 +50,10 @@ public class Target : MonoBehaviour
         for (int i = 0; i < targetSandwich.transform.childCount; i++)
         {  
             GameObject ingredient = Instantiate(targetSandwich.transform.GetChild(i).gameObject, positions[i]);
-            ingredient.name = targetSandwich.transform.GetChild(i).name;
-            ingredient.transform.SetParent(gameObject.transform);
-            ingredient.transform.SetAsLastSibling();
+            Destroy(ingredient.GetComponent<ItemTimer>());  // destroy timer to not move object
+            ingredient.name = targetSandwich.transform.GetChild(i).name;    // get the normal name instead of (Clone)
+            ingredient.transform.SetParent(gameObject.transform);   // parent this, not position object
+            ingredient.transform.SetAsLastSibling();    // set the hierarchy order to same as on screen
         }
     }
 }
