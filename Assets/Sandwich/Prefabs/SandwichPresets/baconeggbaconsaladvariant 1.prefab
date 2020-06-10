@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4015753456100753760}
   m_Layer: 0
-  m_Name: baconeggbaconsaladvariant
+  m_Name: baconeggbaconsaladvariant 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ PrefabInstance:
     - target: {fileID: 284784665253795074, guid: 8ebdbb2bc80ec1043978ee93437aa0d0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26965404
+      value: -0.013
       objectReference: {fileID: 0}
     - target: {fileID: 284784665253795074, guid: 8ebdbb2bc80ec1043978ee93437aa0d0,
         type: 3}
@@ -271,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 1130029963518645065, guid: 6af645a8813f8114fba9fc1f19f48643,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.32141995
+      value: -0.102
       objectReference: {fileID: 0}
     - target: {fileID: 1130029963518645065, guid: 6af645a8813f8114fba9fc1f19f48643,
         type: 3}
@@ -351,12 +351,12 @@ PrefabInstance:
     - target: {fileID: 4037304479153591207, guid: 78182331682e5e6479c1cfad39649cc0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.45087194
+      value: -0.043
       objectReference: {fileID: 0}
     - target: {fileID: 4037304479153591207, guid: 78182331682e5e6479c1cfad39649cc0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77067834
+      value: 0.771
       objectReference: {fileID: 0}
     - target: {fileID: 4037304479153591207, guid: 78182331682e5e6479c1cfad39649cc0,
         type: 3}
