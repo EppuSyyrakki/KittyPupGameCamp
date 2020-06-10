@@ -2,7 +2,9 @@
 
 public class IngredientList : MonoBehaviour
 {
+    [Header("Increase SIZE if needed and drag ingredient to the new row")]
     public GameObject[] _allIngredients;
+    
     private GameObject[] _itemsOnTheBelt;
     private float[] _startTimes;
 
