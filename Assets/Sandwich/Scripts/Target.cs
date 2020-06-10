@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    [Header("Increase Size if needed")]
+    [Header("and drag preset prefab to the new Element")]
     public GameObject[] allPresets;
    
     [NonSerialized] public GameObject targetSandwich;   // nonserialized public is public but doesn't show up in editor
