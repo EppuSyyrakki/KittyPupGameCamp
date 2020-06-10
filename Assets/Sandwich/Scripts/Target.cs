@@ -36,7 +36,7 @@ public class Target : MonoBehaviour
 
         for (int i = 0; i < targetSandwich.transform.childCount; i++)
         {
-            GameObject pos = new GameObject(targetSandwich.transform.GetChild(i).name);
+            GameObject pos = new GameObject(targetSandwich.transform.GetChild(i).name + "Pos");
             pos.transform.position = highestPos.position + new Vector3(0, -i * stepDifference, 0);
             positions[i] = pos.transform;
             positions[i].transform.SetParent(gameObject.transform);
@@ -49,7 +49,9 @@ public class Target : MonoBehaviour
         for (int i = 0; i < targetSandwich.transform.childCount; i++)
         {  
             GameObject ingredient = Instantiate(targetSandwich.transform.GetChild(i).gameObject, positions[i]);
+            ingredient.name = targetSandwich.transform.GetChild(i).name;
             ingredient.transform.SetParent(gameObject.transform);
+            ingredient.transform.SetAsLastSibling();
         }
     }
 }
