@@ -122,6 +122,8 @@ public class IngredientList : MonoBehaviour
     {
         // spawn item clone
         GameObject _itemClone = Instantiate(_item, _spawningPos);
+        _itemClone.AddComponent<ItemTimer>();
+        _itemClone.GetComponent<ItemTimer>()._belt = this;
 
         // used to follow when next spawn should be released
         _priorOne = _itemClone;
