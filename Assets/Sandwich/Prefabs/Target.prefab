@@ -110,8 +110,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allPresets:
-  - {fileID: 8705870521949600515, guid: e1f0ca87e6e1efa42b2fdfdf3b2978d2, type: 3}
+  - {fileID: 8705870521949600515, guid: 219c06bb0c135cd499e13b175de7a754, type: 3}
   - {fileID: 8705870521949600515, guid: f8d98b0c37ba20a49b5026068ae59d81, type: 3}
+  - {fileID: 8705870521949600515, guid: 984b60b8274cbc541acf13d53ab5123a, type: 3}
+  - {fileID: 8705870521949600515, guid: b28948d121790e34da7f29b6d7b46a86, type: 3}
+  - {fileID: 8705870521949600515, guid: 7f54118e0afb5fa46b3c07104674b81b, type: 3}
+  - {fileID: 8705870521949600515, guid: 8a55f8f5baa17c74093907e6d921956e, type: 3}
 --- !u!1 &6562324981893309441
 GameObject:
   m_ObjectHideFlags: 0
