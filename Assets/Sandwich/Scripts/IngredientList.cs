@@ -13,7 +13,7 @@ public class IngredientList : MonoBehaviour
 
     private float _timer = 0;
     private int _itemCountOnBelt;
-    private int _maxCountOnBelt = 4;
+    private int _maxCountOnBelt = 100;
     private int _indexToDestroy;
 
     private GameObject _priorOne;
