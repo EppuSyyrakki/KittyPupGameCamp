@@ -35,4 +35,9 @@ public class ItemTimer : MonoBehaviour
     {
         return _journeyLength;
     }
+
+    public void DestroyThis()
+    {
+        Destroy(this);
+    }
 }

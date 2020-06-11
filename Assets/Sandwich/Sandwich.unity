@@ -533,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1784727543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,26 +1014,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 018a2d868f6caf746a40584daf0a0e7f, type: 3}
---- !u!1 &4315976947287918525 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4315976948646168098, guid: 018a2d868f6caf746a40584daf0a0e7f,
-    type: 3}
-  m_PrefabInstance: {fileID: 4315976947287918524}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4315976947287918526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4315976947287918525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d5df02099fa3c43b925026f80292b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startTime: 0
-  _belt: {fileID: 889543361676550326}
 --- !u!1001 &4460171005526626577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1046,6 +1026,16 @@ PrefabInstance:
       propertyPath: _ingredientList
       value: 
       objectReference: {fileID: 889543361676550326}
+    - target: {fileID: 3125209091505209598, guid: 6aa109bb98f98f5429d5e7a8abe9a98c,
+        type: 3}
+      propertyPath: _lerpSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125209091505209598, guid: 6aa109bb98f98f5429d5e7a8abe9a98c,
+        type: 3}
+      propertyPath: holdPos
+      value: 
+      objectReference: {fileID: 5473970535664774811}
     - target: {fileID: 4460171005717269953, guid: 6aa109bb98f98f5429d5e7a8abe9a98c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1177,3 +1167,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4da88891cfa8a04aa858c9e7a06a5f4, type: 3}
+--- !u!4 &5473970535664774811 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 617899449943315561, guid: f4da88891cfa8a04aa858c9e7a06a5f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5473970535664774810}
+  m_PrefabAsset: {fileID: 0}

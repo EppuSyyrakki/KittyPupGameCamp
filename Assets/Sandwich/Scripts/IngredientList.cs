@@ -124,6 +124,9 @@ public class IngredientList : MonoBehaviour
         GameObject _itemClone = Instantiate(_item, _spawningPos);
         _itemClone.AddComponent<ItemTimer>();
         _itemClone.GetComponent<ItemTimer>()._belt = this;
+        _itemClone.transform.parent = null;
+        float zScaler = _itemClone.transform.localScale.z;
+        _itemClone.transform.localScale = new Vector3(100, 100, zScaler);
 
         // used to follow when next spawn should be released
         _priorOne = _itemClone;
