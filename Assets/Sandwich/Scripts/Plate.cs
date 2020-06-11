@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    Sandwich mySandwich;
+    public List<GameObject> sandwich;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (sandwich == null) sandwich = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void ResetSandwich()
+    {
+        foreach (GameObject obj in sandwich) Destroy(obj);
+        sandwich.Clear();
     }
 }
