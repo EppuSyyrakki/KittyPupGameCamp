@@ -7,6 +7,7 @@ public class IngredientList : MonoBehaviour
     private GameObject[] _itemsOnTheBelt;
 
     public Transform _spawningPos;
+    public Transform _spawnNextPos;
     public Transform _destroyPos;
     private float _offsetDestroySpot = 5f;
 
@@ -58,8 +59,6 @@ public class IngredientList : MonoBehaviour
     {
         _timer += Time.deltaTime;
 
-        // time to spawn next item aka the spawning frequency
-        // higher the value the longer it takes to spawn next one
         int _nextUp = 10;
 
         if (_isFirst)
@@ -69,19 +68,19 @@ public class IngredientList : MonoBehaviour
             _isFirst = false;
             _timer = 0;
         }
+        else if (_priorOne)
+        {
+            float _xPos = _priorOne.transform.position.x;
+
+            // When prior item reaches a given spot (here:0) on the conveyor belt AND there is room on the belt, spawning event is invoked
+            if (_xPos <= _spawnNextPos.position.x && _itemCountOnBelt < _maxCountOnBelt) EventManager.RaiseOnSpawn();
+        } 
         else
-        {          
-            // The second option for spawning event (the one that works better): 
+        {
+
             // When timer reaches the given moment AND there's room on teh belt, spawning event is invoked.
             if (_timer > _nextUp && _itemCountOnBelt < _maxCountOnBelt) EventManager.RaiseOnSpawn();
 
-            // The first option for spawning event:
-            // Would love to make this one work, but as it does not yet, it has been commented out
-            //float xPos = 12; // arbitrary init value
-            //if (_priorOne != null) xPos = _priorOne.transform.position.x; // helper var is set for clarification
-
-            // When prior item reaches a given spot (here:0) on the conveyor belt AND there is room on the belt, spawning event is invoked
-            //if (xPos <= 0 && _itemCountOnBelt < _maxCountOnBelt) EventMngr.RaiseOnSpawn();
         }
     }
 
@@ -99,6 +98,11 @@ public class IngredientList : MonoBehaviour
                 EventManager.RaiseOnDestroy();
             }
         }
+    }
+   
+    public void DestroyItemsWhenHit(GameObject _item)
+    {
+        if (_item && _item.name != "Ingredients") GameObject.Destroy(_item);
     }
 
     private void Increase()
@@ -118,8 +122,6 @@ public class IngredientList : MonoBehaviour
     {
         // spawn item clone
         GameObject _itemClone = Instantiate(_item, _spawningPos);
-
-        Debug.Log(_itemClone.name + " has a start time of: " + _itemClone.GetComponent<ItemTimer>()._startTime);
 
         // used to follow when next spawn should be released
         _priorOne = _itemClone;

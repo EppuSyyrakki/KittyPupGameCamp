@@ -9,6 +9,7 @@ public class UIControl : MonoBehaviour
     private Vector3 startPos;
     private Quaternion startRot;
     private GameObject selected;
+    public IngredientList _ingredientList;
     private Camera cam;
     private bool _itemSelected = false;
     private float _lerpT;
@@ -30,8 +31,11 @@ public class UIControl : MonoBehaviour
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit))  // get object that was hit with hit.collider.gameObject                      
+        if (Physics.Raycast(ray, out RaycastHit hit)) // get object that was hit with hit.collider.gameObject   
+        {
+            _ingredientList.DestroyItemsWhenHit(hit.collider.gameObject);
             if (hit.collider.gameObject.GetComponent<ItemTimer>() != null) AssignSelected(hit);
+        }                    
     }
 
     private void AssignSelected(RaycastHit hit)
