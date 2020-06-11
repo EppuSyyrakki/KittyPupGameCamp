@@ -3,18 +3,12 @@
 public class IngredientList : MonoBehaviour
 {
     [Header("Increase SIZE if needed and drag ingredient to the new row")]
-    public GameObject[] _allIngredients;
-    
+    public GameObject[] _allIngredients;    
     private GameObject[] _itemsOnTheBelt;
-    private float[] _startTimes;
 
     public Transform _spawningPos;
     public Transform _destroyPos;
     private float _offsetDestroySpot = 5f;
-
-    public float _speed = 0.008f;
-    private float _startTime;
-    private float _journeyLength;
 
     private float _timer = 0;
     private int _itemCountOnBelt;
@@ -47,10 +41,6 @@ public class IngredientList : MonoBehaviour
     {
         _itemCountOnBelt = 0;
 
-        // item moving (lerp) stuff
-        _startTime = Time.time;
-        _journeyLength = Vector3.Distance(_spawningPos.position, _destroyPos.position);
-
         // init the array for items on the conveyor belt
         _itemsOnTheBelt = new GameObject[_maxCountOnBelt];
 
@@ -61,7 +51,6 @@ public class IngredientList : MonoBehaviour
     void Update()
     {
         AddNewItemOnBelt();
-        MoveItems();
         DestroyItemsAtTheEndOfBelt();
     }
 
@@ -94,18 +83,6 @@ public class IngredientList : MonoBehaviour
             // When prior item reaches a given spot (here:0) on the conveyor belt AND there is room on the belt, spawning event is invoked
             //if (xPos <= 0 && _itemCountOnBelt < _maxCountOnBelt) EventMngr.RaiseOnSpawn();
         }
-    }
-
-    private void MoveItems()
-    {
-        foreach (GameObject item in _itemsOnTheBelt)
-        {
-            // Move existing item(s)
-            if (item != null) MoveItemOnTheBelt(item);
-
-            //if (item != null) Debug.Log(item.name + " is at: " + item.transform.position.x); 
-        }
-
     }
 
     private void DestroyItemsAtTheEndOfBelt()
@@ -142,12 +119,7 @@ public class IngredientList : MonoBehaviour
         // spawn item clone
         GameObject _itemClone = Instantiate(_item, _spawningPos);
 
-        // non-kinematic bodies may be shoved into spinning motion by incoming bodies and then they are beyond control
-        // both body types may stop (what seems) randomly, but it seems kinematic bodies are maybe wee bit more inclined to do so
-
-        // make them kinematic so they can't shove each other spinning
-        //Rigidbody rb = _itemClone.GetComponent<Rigidbody>();
-        //rb.isKinematic = true;
+        Debug.Log(_itemClone.name + " has a start time of: " + _itemClone.GetComponent<ItemTimer>()._startTime);
 
         // used to follow when next spawn should be released
         _priorOne = _itemClone;
@@ -160,24 +132,6 @@ public class IngredientList : MonoBehaviour
 
         // restart the timer 
         _timer = 0;
-    }
-
-    private void MoveItemOnTheBelt(GameObject _itemClone)
-    {
-        // NEED HELP:
-        // The _distCovered var keeps increasing little by little for each spawn object (so they "launch" faster each time).
-        // Couldn't figure out where to "set it to default". Thought that might help. 
-        // Or is there another way to keep the moving pace the same for each object spawned?
-
-        // The lerp helpers
-        float _distCovered = (Time.time - _startTime) * _speed;
-        float _fractionOfJourney = _distCovered / _journeyLength;
-
-        // Do the lerp
-        _itemClone.transform.position = Vector3.Lerp(_itemClone.transform.position, _destroyPos.position, _fractionOfJourney);
-
-        //Debug.Log(_itemClone.name + " dist covered pos: " + _distCovered);
-
     }
 
     private GameObject GetRandomItemFromArray()
