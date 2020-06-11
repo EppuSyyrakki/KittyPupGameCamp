@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &436847116 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 371777642433513558, guid: 0ff2766781758ee47a0c3fe5c5b85c3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 889543361676550325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &532012757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6529860315047936554, guid: 0ff2766781758ee47a0c3fe5c5b85c3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 889543361676550325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &945220136
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +420,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff2766781758ee47a0c3fe5c5b85c3c, type: 3}
+--- !u!114 &889543361676550326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1788031195, guid: 0ff2766781758ee47a0c3fe5c5b85c3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 889543361676550325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981bb91dbfe090a4e912635c24291657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4315976947287918524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -477,6 +501,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 018a2d868f6caf746a40584daf0a0e7f, type: 3}
+--- !u!1 &4315976947287918525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4315976948646168098, guid: 018a2d868f6caf746a40584daf0a0e7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4315976947287918524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4315976947287918526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315976947287918525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d5df02099fa3c43b925026f80292b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startTime: 0
+  _belt: {fileID: 889543361676550326}
 --- !u!1001 &4460171005526626577
 PrefabInstance:
   m_ObjectHideFlags: 0
