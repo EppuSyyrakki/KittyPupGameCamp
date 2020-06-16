@@ -1,18 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerOne : MonoBehaviour
+public class PlayerOne : Controls
 {
     // Start is called before the first frame update
-    void Start()
+    override public void Start()
     {
-        
+        OpponentRB = GameObject.Find("Player2").GetComponent<Rigidbody>();
+        base.Start();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        MoveLeg(Input.GetAxis("Player1"));
+
+        if (Input.GetButtonDown("Jump1"))
+            StartJump();
+
+        if (Input.GetButtonUp("Jump1"))
+            StopJump();
     }
 }
