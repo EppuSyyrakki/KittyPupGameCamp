@@ -2,11 +2,16 @@
 
 public class PlayerTwo : Controls
 {
+    void Awake()
+    {
+        gameObject.name = "Player2";
+    }
+
     // Start is called before the first frame update
     override public void Start()
     {
         OpponentRB = GameObject.Find("Player1").GetComponent<Rigidbody>();
-        base.Start();     
+        base.Start();
     }
 
     // Update is called once per frame

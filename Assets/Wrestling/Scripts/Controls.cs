@@ -11,8 +11,6 @@ public class Controls : MonoBehaviour
     public HingeJoint hip;
     public HingeJoint knee;
 
-    private HingeJoint originalKnee;
-
     [HideInInspector] public FixedJoint ownFixedJoint;    
 
     // Start is called before the first frame update
@@ -27,7 +25,6 @@ public class Controls : MonoBehaviour
     public void MoveLeg(float amount)
     {
         JointMotor jointMotor = hip.motor;
-        // jointMotor.force = Mathf.Abs(amount) * force;
         jointMotor.targetVelocity = amount * _moveSpeed;
         hip.motor = jointMotor;
     }

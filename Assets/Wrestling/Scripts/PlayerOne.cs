@@ -2,6 +2,11 @@
 
 public class PlayerOne : Controls
 {
+    void Awake()
+    {
+        gameObject.name = "Player1";
+    }
+
     // Start is called before the first frame update
     override public void Start()
     {

@@ -505,8 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05af073d09bfa14bb70168717395f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 750
-  force: 500
+  _moveSpeed: 750
+  _force: 500
+  _jumpSpeed: 1000
   hip: {fileID: 3773844867150332404}
   knee: {fileID: 5243610709099848887}
   ownFixedJoint: {fileID: 0}
@@ -672,7 +673,7 @@ HingeJoint:
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
-    targetVelocity: 0
+    targetVelocity: 2000
     force: 5000
     freeSpin: 0
   m_UseLimits: 1

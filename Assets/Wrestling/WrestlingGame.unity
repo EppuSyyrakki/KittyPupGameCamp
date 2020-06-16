@@ -319,11 +319,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5243610709099848887, guid: 8bcabe23c05cb96438386018e8f6e905,
-        type: 3}
-      propertyPath: m_Motor.targetVelocity
-      value: 2000
-      objectReference: {fileID: 0}
     - target: {fileID: 7183687690671372083, guid: 8bcabe23c05cb96438386018e8f6e905,
         type: 3}
       propertyPath: m_ConnectedBody
@@ -556,11 +551,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5243610709099848887, guid: 73943822ee172744bb946d77df506c57,
-        type: 3}
-      propertyPath: m_Motor.targetVelocity
-      value: 2000
-      objectReference: {fileID: 0}
     - target: {fileID: 7183687690671372083, guid: 73943822ee172744bb946d77df506c57,
         type: 3}
       propertyPath: m_ConnectedBody
