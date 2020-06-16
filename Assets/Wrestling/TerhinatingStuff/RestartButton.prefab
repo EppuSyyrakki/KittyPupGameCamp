@@ -274,4 +274,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2273775117442895119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6358185111517371559, guid: 6903f7c8b3cccbd45a09fcc62ad0fbf3,
+          type: 3}
+        m_MethodName: ChangeScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
