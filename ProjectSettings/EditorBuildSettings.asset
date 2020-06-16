@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/StudentSleeper/Scenes/StudentSleeper.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Sandwich/Sandwich.unity
     guid: 21205e9cc29ea6a4d92310b993e22f16
+  - enabled: 1
+    path: Assets/Wrestling/MainMenuScene.unity
+    guid: 56cc00a3ff146714b848886b381dad97
+  - enabled: 1
+    path: Assets/Wrestling/WrestlingTesting.unity
+    guid: c2c26e2dff46f6141bd4b595837fc683
   m_configObjects: {}
