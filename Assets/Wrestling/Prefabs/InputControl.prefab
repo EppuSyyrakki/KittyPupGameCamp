@@ -47,5 +47,5 @@ MonoBehaviour:
   p1Knee: {fileID: 0}
   p2Hip: {fileID: 0}
   p2Knee: {fileID: 0}
-  moveSpeed: 1500
-  force: 1000
+  moveSpeed: 750
+  force: 500
