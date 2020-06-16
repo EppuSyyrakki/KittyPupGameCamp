@@ -31,13 +31,25 @@ public class Controls : MonoBehaviour
 
     public void StartJump()
     {
-        Debug.Log("Jump started");
         knee.useMotor = true;
     }
 
     public void StopJump()
     {
-        Debug.Log("Jump stopped");
         knee.useMotor = false;
+    }
+
+    /**
+     * When this player loses call this to dislocate the legs. Work in progress.
+     */
+    public void Dislocate()
+    {
+        HingeJoint[] joints = GetComponentsInChildren<HingeJoint>();
+
+        foreach (HingeJoint hj in joints)
+        {
+            hj.transform.parent = null;
+            Destroy(hj);
+        }            
     }
 }
