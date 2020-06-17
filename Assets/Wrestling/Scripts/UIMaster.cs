@@ -7,31 +7,8 @@ namespace Wrestling
 {
     public class UIMaster : MonoBehaviour
     {
-        [SerializeField, Tooltip("Add all menu Game Objects here")]
-        private GameObject[] menus = null;
-        [SerializeField, Tooltip("Start with this menu active")]
-        private int startMenu = 0;
-
         private void Start()
         {
-            // setting the start menu active
-            ChangeMenu(menuIndex: startMenu);
-        }
-
-        public void ChangeMenu(int menuIndex)
-        {
-            // iterating all menus
-            for (int i = 0; i < menus.Length; i++)
-            {
-                if (i == menuIndex) // this is the menu we want active
-                {
-                    menus[i].SetActive(true);
-                }
-                else // all other menus are disabled
-                {
-                    menus[i].SetActive(false);
-                }
-            }
         }
 
         public void ChangeScene(int sceneID)
