@@ -59,8 +59,6 @@ public class ScoreControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float tmp = _playerOne.transform.position.y;
-        Debug.Log("Begin y: " + tmp );
         _scoreTriggerPos = _tappingOutPos.position.y;
         InitScores();
         InitFallBools();
