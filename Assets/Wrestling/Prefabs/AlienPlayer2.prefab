@@ -201,36 +201,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011345648, y: 0.03651638, z: 0.027888732}
   m_Center: {x: 0.0014221721, y: 0.00011772493, z: -0.04343246}
---- !u!1 &2551359523831229162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2274008433505814174}
-  m_Layer: 0
-  m_Name: CameraTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2274008433505814174
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2551359523831229162}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 9.5, z: 3.13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7183687690671372086}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2959081548730972069
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,10 +484,10 @@ GameObject:
   - component: {fileID: 5914148843523665439}
   - component: {fileID: 7233607109171075758}
   - component: {fileID: 7151858125793055384}
-  - component: {fileID: 6845472697098228012}
+  - component: {fileID: 8633375125213432204}
   m_Layer: 0
-  m_Name: AlienPlayer1
-  m_TagString: Player1
+  m_Name: AlienPlayer2
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -529,16 +499,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7183687690671372089}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5972404960417728282}
   - {fileID: 1387147941641328748}
-  - {fileID: 2274008433505814174}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5914148843523665439
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -582,7 +551,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5463915
   m_Center: {x: 0.029613733, y: 8.460925, z: 3.3040295}
---- !u!114 &6845472697098228012
+--- !u!114 &8633375125213432204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -591,7 +560,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7183687690671372089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe28f1151fb74d54088c2d4a1c3a9deb, type: 3}
+  m_Script: {fileID: 11500000, guid: b05af073d09bfa14bb70168717395f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 750
@@ -769,7 +738,7 @@ HingeJoint:
   m_Anchor: {x: -0.84, y: 3.2, z: 3.3}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18575263, y: 3.3978891, z: 3.3000002}
+  m_ConnectedAnchor: {x: -0.18575239, y: 3.3978891, z: 3.3}
   m_UseSpring: 0
   m_Spring:
     spring: 0
