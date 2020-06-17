@@ -9,7 +9,8 @@ public class ScoreControl : MonoBehaviour
     public PlayerOne _playerOne;
     public PlayerTwo _playerTwo;
 
-    public float _scoreTriggerPos;
+    [SerializeField]
+    private float _scoreTriggerPos;
 
     [SerializeField]
     private int _playerOneScore;
@@ -17,8 +18,7 @@ public class ScoreControl : MonoBehaviour
     [SerializeField]
     private int _playerTwoScore;
 
-    private bool _isOneFallOne;
-    private bool _isOneFallTwo;
+    private bool _isOneFall { get; set; }
 
     public GameObject _scoreTextPlayerOne;
     public GameObject _scoreTextPlayerTwo;
@@ -30,11 +30,10 @@ public class ScoreControl : MonoBehaviour
     private TextMeshProUGUI _scoreTextTwo = null;
 
     [SerializeField]
-    private string _scoreFormatOne = "{0}";
+    private string _scoreFormatOne = "{ }";
     
     [SerializeField]
-    private string _scoreFormatTwo = "{0}";
-
+    private string _scoreFormatTwo = "{ }";
 
     private void OnEnable()
     {
@@ -58,8 +57,7 @@ public class ScoreControl : MonoBehaviour
 
     private void InitFallBools()
     {
-        _isOneFallOne = false;
-        _isOneFallTwo = false;
+        _isOneFall = false;
     }
 
     private void InitScores()
@@ -78,7 +76,6 @@ public class ScoreControl : MonoBehaviour
 
     private void UpdateScore()
     {
-
         _scoreTextOne.text = string.Format(format: _scoreFormatOne, arg0: _playerOneScore);
         _scoreTextTwo.text = string.Format(format: _scoreFormatTwo, arg0: _playerTwoScore);
     }
@@ -91,20 +88,30 @@ public class ScoreControl : MonoBehaviour
 
     private void AddScoreForOne()
     { 
-        if (!_isOneFallTwo)
+        if (!_isOneFall)
         {
             _playerOneScore++;
-            _isOneFallTwo = true;
+            _isOneFall = true;
         }
     }
 
     private void AddScoreForTwo()
     {
 
-        if (!_isOneFallOne)
+        if (!_isOneFall)
         {
             _playerTwoScore++;
-            _isOneFallOne = true;
+            _isOneFall = true;
         }
+    }
+
+    public int GetPlayerOneScore()
+    {
+        return _playerOneScore;
+    }
+
+    public int GetPlayerTwoScore()
+    {
+        return _playerTwoScore;
     }
 }

@@ -1077,27 +1077,7 @@ PrefabInstance:
     - target: {fileID: 7322152170601666840, guid: 6a1082568884a5243ab84eac1eba11aa,
         type: 3}
       propertyPath: m_Name
-      value: InputControl
-      objectReference: {fileID: 0}
-    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
-        type: 3}
-      propertyPath: p1Hip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
-        type: 3}
-      propertyPath: p1Knee
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
-        type: 3}
-      propertyPath: p2Hip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
-        type: 3}
-      propertyPath: p2Knee
-      value: 
+      value: ScoreControl
       objectReference: {fileID: 0}
     - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
         type: 3}
@@ -1109,11 +1089,6 @@ PrefabInstance:
       propertyPath: _playerTwo
       value: 
       objectReference: {fileID: 1444047799}
-    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
-        type: 3}
-      propertyPath: _scoreTriggerPos
-      value: -8
-      objectReference: {fileID: 0}
     - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
         type: 3}
       propertyPath: _scoreTextPlayerOne
@@ -1134,6 +1109,11 @@ PrefabInstance:
       propertyPath: _scoreTextTwo
       value: 
       objectReference: {fileID: 1913959089}
+    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
+        type: 3}
+      propertyPath: _scoreKeeper
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a1082568884a5243ab84eac1eba11aa, type: 3}
 --- !u!1001 &7603171773769793294
