@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 5952378208978413016}
   - component: {fileID: 7237522991609195792}
   - component: {fileID: 1497377141}
-  - component: {fileID: 6202610096448144039}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas In Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,21 +104,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &1497377141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470626153279644806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a721c162a051eb4095ddaa5b1d1507a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menus:
-  - {fileID: 7753969887929865921, guid: 79522aec88406124286d250be9e1481a, type: 3}
-  startMenu: 0
---- !u!114 &6202610096448144039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,7 +236,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1497377141}
         m_MethodName: ChangeScene
         m_Mode: 3
         m_Arguments:
@@ -382,7 +366,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1497377141}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:

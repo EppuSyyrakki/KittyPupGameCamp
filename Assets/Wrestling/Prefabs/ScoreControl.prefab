@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7322152170601666822}
   - component: {fileID: 7322152170601666841}
   m_Layer: 0
-  m_Name: InputControl
+  m_Name: ScoreControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,9 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145178e5cdbd844478d6dc34c839ffad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1Hip: {fileID: 0}
-  p1Knee: {fileID: 0}
-  p2Hip: {fileID: 0}
-  p2Knee: {fileID: 0}
-  moveSpeed: 750
-  force: 500
+  _playerOne: {fileID: 0}
+  _playerTwo: {fileID: 0}
+  _scoreTriggerPos: 0
+  _playerOneScore: 0
+  _playerTwoScore: 0
+  _scoreTextPlayerOne: {fileID: 0}
+  _scoreTextPlayerTwo: {fileID: 0}
+  _scoreTextOne: {fileID: 0}
+  _scoreTextTwo: {fileID: 0}
+  _scoreFormatOne: '{0}'
+  _scoreFormatTwo: '{0}'
