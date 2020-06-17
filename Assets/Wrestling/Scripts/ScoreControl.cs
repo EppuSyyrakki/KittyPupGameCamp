@@ -11,11 +11,6 @@ public class ScoreControl : MonoBehaviour
     public Controls _controlsOne;
     public Controls _controlsTwo;
 
-    // [SerializeField]
-    // private float _scoreTriggerPos;
-
-    // public Transform _tappingOutPos;
-
     [SerializeField]
     private int _playerOneScore;
 
@@ -59,11 +54,9 @@ public class ScoreControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float tmp = _playerOne.transform.position.y;
-        Debug.Log("Begin y: " + tmp );
-        // _scoreTriggerPos = _tappingOutPos.position.y;
         InitScores();
         InitFallBools();
+        UpdateScoreOutput();
     }
 
     private void InitFallBools()
@@ -77,19 +70,6 @@ public class ScoreControl : MonoBehaviour
         _playerTwoScore = ScoreKeeper._playerTwoScore;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // ListenOneFalls();    commented out, done in Arena script OnCollisionEnter
-        UpdateScoreOutput();
-    }
-
-    private void ListenOneFalls()
-    {
-        // if (_playerOne.transform.position.y <= _scoreTriggerPos) Wrestling.EventManager.RaiseOnPointForTwo();
-        // if (_playerTwo.transform.position.y <= _scoreTriggerPos) Wrestling.EventManager.RaiseOnPointForOne();        
-    }
-
     private void AddScoreForOne()
     { 
         if (!_isOneFall)
@@ -97,34 +77,25 @@ public class ScoreControl : MonoBehaviour
             ScoreKeeper._playerOneScore++;
             _controlsTwo.Dislocate();
             _isOneFall = true;
+            UpdateScoreOutput();
         }
     }
 
     private void AddScoreForTwo()
     {
-
         if (!_isOneFall)
         {
             ScoreKeeper._playerTwoScore++;
             _controlsOne.Dislocate();
             _isOneFall = true;
+            UpdateScoreOutput();
         }
-    }
-
-    public int GetPlayerOneScore()
-    {
-        return ScoreKeeper._playerOneScore;
-    }
-
-    public int GetPlayerTwoScore()
-    {
-        return ScoreKeeper._playerTwoScore;
     }
 
     private void UpdateScoreOutput()
     {
-        _playerOneScore = GetPlayerOneScore();
-        _playerTwoScore = GetPlayerTwoScore();
+        _playerOneScore = ScoreKeeper._playerOneScore;
+        _playerTwoScore = ScoreKeeper._playerTwoScore;
         _scoreTextOne.text = string.Format(format: _scoreFormatOne, arg0: _playerOneScore);
         _scoreTextTwo.text = string.Format(format: _scoreFormatTwo, arg0: _playerTwoScore);
     }

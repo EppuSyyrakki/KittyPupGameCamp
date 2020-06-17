@@ -1431,7 +1431,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -5280,7 +5280,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 2ab9145848a97d741b855c0f7dbad834, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5494,7 +5494,7 @@ HingeJoint:
   m_Anchor: {x: -0.84, y: 3.2, z: 3.3}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18575263, y: 3.3978891, z: 3.3000002}
+  m_ConnectedAnchor: {x: -0.18575251, y: 3.3978891, z: 3.3}
   m_UseSpring: 0
   m_Spring:
     spring: 0

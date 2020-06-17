@@ -33,20 +33,12 @@ public class ScoreKeeper : MonoBehaviour
     void Start()
     {
         InitScores();
-        Debug.LogWarning("ScoreKeeper created!!");
-
     }
 
     private void InitScores()
     {
         _playerOneScore = 0;
         _playerTwoScore = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void AddScoreForOne()
