@@ -12,11 +12,14 @@ public class Controls : MonoBehaviour
     public HingeJoint knee;
     public bool invertControl = false;
 
+    [HideInInspector] private ParticleSystem blood;
+
     [HideInInspector] public FixedJoint ownFixedJoint;    
 
     // Start is called before the first frame update
     virtual public void Start()
-    {       
+    {
+        blood = GetComponent<ParticleSystem>();
         ownFixedJoint = GetComponent<FixedJoint>();
         FixedJoint fj = ownFixedJoint;
         fj.connectedBody = OpponentRB;
@@ -25,7 +28,7 @@ public class Controls : MonoBehaviour
 
     public void MoveLeg(float amount)
     {
-        if (hip && knee)
+        if (hip && knee && !ScoreControl._isOneFall)
         {
             JointMotor jointMotor = hip.motor;
 
@@ -38,7 +41,7 @@ public class Controls : MonoBehaviour
 
     public void StartJump()
     {
-        if (hip && knee) knee.useMotor = true;
+        if (hip && knee && !ScoreControl._isOneFall) knee.useMotor = true;
     }
 
     public void StopJump()
@@ -51,6 +54,8 @@ public class Controls : MonoBehaviour
      */
     public void Dislocate()
     {
+        blood.Play();
+
         HingeJoint[] joints = GetComponentsInChildren<HingeJoint>();
 
         foreach (HingeJoint hj in joints)
