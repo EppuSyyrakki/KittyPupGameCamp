@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    [SerializeField]
-    private int _playerOneScore;
-
-    [SerializeField]
-    private int _playerTwoScore;
-
-    public ScoreControl _scoreControl;
+    public static int _playerOneScore;
+    public static int _playerTwoScore;
 
     private bool _isScoreUpdated { get; set; }
 
@@ -25,24 +21,6 @@ public class ScoreKeeper : MonoBehaviour
     {
         Wrestling.EventManager.onPlayerOneTappedOut += AddScoreForTwo;
         Wrestling.EventManager.onPlayerTwoTappedOut += AddScoreForOne;
-    }
-
-    private void AddScoreForOne()
-    {
-        if (!_isScoreUpdated)
-        {
-            _playerOneScore += _scoreControl.GetPlayerOneScore();
-            _isScoreUpdated = true;
-        }
-    }
-
-    private void AddScoreForTwo()
-    {
-        if (!_isScoreUpdated)
-        {
-            _playerTwoScore += _scoreControl.GetPlayerTwoScore();
-            _isScoreUpdated = true;
-        }
     }
 
     private void OnDisable()
@@ -68,32 +46,24 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_scoreControl) UpdateScores();
+
     }
 
-    private void UpdateScores()
+    private void AddScoreForOne()
     {
-        if (_scoreControl.GetPlayerOneScore() > _playerOneScore) Wrestling.EventManager.RaiseOnPointForOne();
-        if (_scoreControl.GetPlayerTwoScore() > _playerTwoScore) Wrestling.EventManager.RaiseOnPointForTwo();
-        Debug.Log("Player 1 updated: " + _playerOneScore);
-        Debug.Log("Player 2 updated: " + _playerTwoScore);
+        if (!_isScoreUpdated)
+        {
+            // _playerOneScore += _scoreControl.GetPlayerOneScore();
+            _isScoreUpdated = true;
+        }
     }
 
-    public void SetScoreControl(ScoreControl scoreControl)
+    private void AddScoreForTwo()
     {
-        _scoreControl = scoreControl;
-        Debug.Log("scores are: ");
-        Debug.Log("Player 1: " + _playerOneScore);
-        Debug.Log("Player 2: " + _playerTwoScore);
-    }
-
-    public int GetInitScorePlayerOne()
-    {
-        return _playerOneScore;
-    }
-
-    public int GetInitScorePlayerTwo()
-    {
-        return _playerTwoScore;
+        if (!_isScoreUpdated)
+        {
+            //_playerTwoScore += _scoreControl.GetPlayerTwoScore();
+            _isScoreUpdated = true;
+        }
     }
 }

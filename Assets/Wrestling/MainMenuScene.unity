@@ -128,10 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1497377141, guid: 74d870ca9ed8a234796a9ad6fb5fc1a9, type: 3}
-      propertyPath: _scoreControl
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1470626153279644806, guid: 74d870ca9ed8a234796a9ad6fb5fc1a9,
         type: 3}
       propertyPath: m_Name
@@ -554,6 +550,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ScoreKeeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739374160377595209, guid: 6328c7a477d52264e8698ca1282f2b92,
+        type: 3}
+      propertyPath: _scoreControl
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739374160377595209, guid: 6328c7a477d52264e8698ca1282f2b92,
+        type: 3}
+      propertyPath: _scoreTextPlayerOne
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6328c7a477d52264e8698ca1282f2b92, type: 3}
