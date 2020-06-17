@@ -8,6 +8,8 @@ public class ScoreControl : MonoBehaviour
 {
     public PlayerOne _playerOne;
     public PlayerTwo _playerTwo;
+    public Controls _controlsOne;
+    public Controls _controlsTwo;
 
     [SerializeField]
     private float _scoreTriggerPos;
@@ -89,6 +91,7 @@ public class ScoreControl : MonoBehaviour
         if (!_isOneFall)
         {
             ScoreKeeper._playerOneScore++;
+            _controlsTwo.Dislocate();
             _isOneFall = true;
         }
     }
@@ -99,6 +102,7 @@ public class ScoreControl : MonoBehaviour
         if (!_isOneFall)
         {
             ScoreKeeper._playerTwoScore++;
+            _controlsOne.Dislocate();
             _isOneFall = true;
         }
     }

@@ -667,6 +667,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: In Game UI
       objectReference: {fileID: 0}
+    - target: {fileID: 7988018296146539327, guid: 8bcdf4c542993024791ae3d317abe48d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988018296146539327, guid: 8bcdf4c542993024791ae3d317abe48d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 57.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bcdf4c542993024791ae3d317abe48d, type: 3}
 --- !u!1001 &7322152169859451254
@@ -776,6 +786,16 @@ PrefabInstance:
       propertyPath: _scoreTriggerPos
       value: -8.3
       objectReference: {fileID: 0}
+    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
+        type: 3}
+      propertyPath: _controlsOne
+      value: 
+      objectReference: {fileID: 264587860}
+    - target: {fileID: 7322152170601666841, guid: 6a1082568884a5243ab84eac1eba11aa,
+        type: 3}
+      propertyPath: _controlsTwo
+      value: 
+      objectReference: {fileID: 1444047799}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a1082568884a5243ab84eac1eba11aa, type: 3}
 --- !u!1001 &7603171773769793294
