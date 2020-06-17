@@ -10,6 +10,7 @@ public class Controls : MonoBehaviour
     public float _jumpSpeed = 1000;
     public HingeJoint hip;
     public HingeJoint knee;
+    public bool invertControl = false;
 
     [HideInInspector] public FixedJoint ownFixedJoint;    
 
@@ -25,7 +26,10 @@ public class Controls : MonoBehaviour
     public void MoveLeg(float amount)
     {
         JointMotor jointMotor = hip.motor;
-        jointMotor.targetVelocity = amount * _moveSpeed;
+        
+        if (invertControl) jointMotor.targetVelocity = -amount * _moveSpeed;
+        else jointMotor.targetVelocity = amount * _moveSpeed;        
+        
         hip.motor = jointMotor;
     }
 
