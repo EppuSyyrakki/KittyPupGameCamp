@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,10 +12,18 @@ namespace Wrestling
         {
         }
 
-        public void ChangeScene(int sceneID)
+        public void ChangeScene()
         {
-            // this method takes index values from build settings
-            SceneManager.LoadScene(sceneBuildIndex: sceneID);
+            // randomize the arena from all the arenas
+            int _count = SceneManager.sceneCountInBuildSettings;
+            int _sceneIndex = UnityEngine.Random.Range(1, _count);
+
+            SceneManager.LoadScene(sceneBuildIndex: _sceneIndex);
+        }
+
+        public void ReturnToMainMenu()
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 0);
         }
 
         public void QuitGame()
