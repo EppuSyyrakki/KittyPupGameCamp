@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Wrestling/WrestlingTesting.unity
     guid: c2c26e2dff46f6141bd4b595837fc683
+  - enabled: 1
+    path: Assets/Wrestling/ArenaAliens.unity
+    guid: e1541b63c6f7a5f49b457bd9dee6d334
+  - enabled: 1
+    path: Assets/Wrestling/ArenaRobots.unity
+    guid: f550775950969ef4ca6d4f25181dc86d
   m_configObjects: {}

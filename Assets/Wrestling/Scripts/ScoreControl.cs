@@ -14,6 +14,8 @@ public class ScoreControl : MonoBehaviour
     [SerializeField]
     private float _scoreTriggerPos;
 
+    public Transform _tappingOutPos;
+
     [SerializeField]
     private int _playerOneScore;
 
@@ -57,7 +59,9 @@ public class ScoreControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _scoreTriggerPos = -8.1f;
+        float tmp = _playerOne.transform.position.y;
+        Debug.Log("Begin y: " + tmp );
+        _scoreTriggerPos = _tappingOutPos.position.y;
         InitScores();
         InitFallBools();
     }

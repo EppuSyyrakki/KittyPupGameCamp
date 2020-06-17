@@ -25,22 +25,25 @@ public class Controls : MonoBehaviour
 
     public void MoveLeg(float amount)
     {
-        JointMotor jointMotor = hip.motor;
-        
-        if (invertControl) jointMotor.targetVelocity = -amount * _moveSpeed;
-        else jointMotor.targetVelocity = amount * _moveSpeed;        
-        
-        hip.motor = jointMotor;
+        if (hip && knee)
+        {
+            JointMotor jointMotor = hip.motor;
+
+            if (invertControl) jointMotor.targetVelocity = -amount * _moveSpeed;
+            else jointMotor.targetVelocity = amount * _moveSpeed;
+
+            hip.motor = jointMotor;
+        }
     }
 
     public void StartJump()
     {
-        knee.useMotor = true;
+        if (hip && knee) knee.useMotor = true;
     }
 
     public void StopJump()
     {
-        knee.useMotor = false;
+        if (hip && knee) knee.useMotor = false;
     }
 
     /**
