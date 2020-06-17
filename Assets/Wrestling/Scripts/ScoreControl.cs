@@ -18,22 +18,27 @@ public class ScoreControl : MonoBehaviour
     [SerializeField]
     private int _playerTwoScore;
 
-    private bool _isOneFall { get; set; }
-
+    [Header("Insert correct text including objects here.")]
     public GameObject _scoreTextPlayerOne;
     public GameObject _scoreTextPlayerTwo;
 
     [SerializeField]
+    [Header("Insert the same text including objects here as well.")]
     private TextMeshProUGUI _scoreTextOne = null;
 
     [SerializeField]
     private TextMeshProUGUI _scoreTextTwo = null;
 
+
+    [Header("Nothing needs to be inserted in here.")]
     [SerializeField]
-    private string _scoreFormatOne = "{ }";
-    
+    private string _scoreFormatOne = "{0}";
+
     [SerializeField]
-    private string _scoreFormatTwo = "{ }";
+    private string _scoreFormatTwo = "{0}";
+
+    private bool _isOneFall { get; set; }
+
 
     private void OnEnable()
     {
@@ -62,22 +67,15 @@ public class ScoreControl : MonoBehaviour
 
     private void InitScores()
     {
-        _playerOneScore = 0;
-        _playerTwoScore = 0;
+        _playerOneScore = ScoreKeeper._playerOneScore;
+        _playerTwoScore = ScoreKeeper._playerTwoScore;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         ListenOneFalls();
-        UpdateScore();
-    }
-
-    private void UpdateScore()
-    {
-        _scoreTextOne.text = string.Format(format: _scoreFormatOne, arg0: _playerOneScore);
-        _scoreTextTwo.text = string.Format(format: _scoreFormatTwo, arg0: _playerTwoScore);
+        UpdateScoreOutput();
     }
 
     private void ListenOneFalls()
@@ -90,7 +88,7 @@ public class ScoreControl : MonoBehaviour
     { 
         if (!_isOneFall)
         {
-            _playerOneScore++;
+            ScoreKeeper._playerOneScore++;
             _isOneFall = true;
         }
     }
@@ -100,18 +98,26 @@ public class ScoreControl : MonoBehaviour
 
         if (!_isOneFall)
         {
-            _playerTwoScore++;
+            ScoreKeeper._playerTwoScore++;
             _isOneFall = true;
         }
     }
 
     public int GetPlayerOneScore()
     {
-        return _playerOneScore;
+        return ScoreKeeper._playerOneScore;
     }
 
     public int GetPlayerTwoScore()
     {
-        return _playerTwoScore;
+        return ScoreKeeper._playerTwoScore;
+    }
+
+    private void UpdateScoreOutput()
+    {
+        _playerOneScore = GetPlayerOneScore();
+        _playerTwoScore = GetPlayerTwoScore();
+        _scoreTextOne.text = string.Format(format: _scoreFormatOne, arg0: _playerOneScore);
+        _scoreTextTwo.text = string.Format(format: _scoreFormatTwo, arg0: _playerTwoScore);
     }
 }
