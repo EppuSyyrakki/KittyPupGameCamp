@@ -10,16 +10,20 @@ public class Controls : MonoBehaviour
     public float _jumpSpeed = 1000;
     public HingeJoint hip;
     public HingeJoint knee;
-    public bool invertControl = false;
+    public bool invertControl = false;  
 
-    [HideInInspector] private ParticleSystem blood;
+    private ParticleSystem blood;
+    private PlayerAudio playerAudio;
+    private KneeSpeed kneeSpeed;
 
-    [HideInInspector] public FixedJoint ownFixedJoint;    
+    [HideInInspector] public FixedJoint ownFixedJoint;  
 
     // Start is called before the first frame update
     virtual public void Start()
     {
         blood = GetComponent<ParticleSystem>();
+        playerAudio = GetComponent<PlayerAudio>();
+        kneeSpeed = GetComponentInChildren<KneeSpeed>();
         ownFixedJoint = GetComponent<FixedJoint>();
         FixedJoint fj = ownFixedJoint;
         fj.connectedBody = OpponentRB;
@@ -37,6 +41,10 @@ public class Controls : MonoBehaviour
 
             hip.motor = jointMotor;
         }
+
+        if (kneeSpeed.hasSpeed && !playerAudio.audioSource.isPlaying) 
+            playerAudio.PlayRandom(PlayerAudio.AudioStyle.Contact);
+
     }
 
     public void StartJump()
@@ -63,5 +71,10 @@ public class Controls : MonoBehaviour
             hj.transform.parent = null;
             Destroy(hj);
         }            
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!ScoreControl._isOneFall && collision.gameObject.tag == "Ground") 
+            playerAudio.PlayRandom(PlayerAudio.AudioStyle.Death);
     }
 }

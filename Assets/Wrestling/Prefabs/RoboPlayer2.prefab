@@ -618,6 +618,7 @@ MonoBehaviour:
   hip: {fileID: 3773844867150332404}
   knee: {fileID: 5243610709099848887}
   invertControl: 0
+  kneeSpeed: {fileID: 0}
   ownFixedJoint: {fileID: 0}
 --- !u!198 &5629402419202938744
 ParticleSystem:
@@ -5303,6 +5304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c40dad1ac2accf4f9799268be92cf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   contact:
   - {fileID: 8300000, guid: ac91b7d7848212a419f341fe0c3d0559, type: 3}
   - {fileID: 8300000, guid: b63e19866fcb5fd46af5ed5b1d2de206, type: 3}
@@ -5513,6 +5515,7 @@ GameObject:
   - component: {fileID: 6681836256719306751}
   - component: {fileID: 4521920645622524495}
   - component: {fileID: 5243610709099848887}
+  - component: {fileID: 5442527033309339929}
   m_Layer: 0
   m_Name: Knee
   m_TagString: Untagged
@@ -5587,6 +5590,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5442527033309339929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439493418522952229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8682aabcd57010f4eaf155851081d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasSpeed: 0
 --- !u!1 &8518571701097846406
 GameObject:
   m_ObjectHideFlags: 0
