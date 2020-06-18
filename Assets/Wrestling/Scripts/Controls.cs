@@ -74,7 +74,7 @@ public class Controls : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (!ScoreControl._isOneFall && collision.gameObject.tag == "Ground") 
-            playerAudio.PlayRandom(PlayerAudio.AudioStyle.Death);
+        if (!ScoreControl._isOneFall && collision.gameObject.tag == "Ground")
+            playerAudio.PlayRandom(PlayerAudio.AudioStyle.Death);            
     }
 }

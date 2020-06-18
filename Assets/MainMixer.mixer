@@ -86,6 +86,10 @@ AudioMixerController:
     name: Master
   - guid: 7379441581f7cfa419f0d15185a7ceb0
     name: Lowpass
+  - guid: f9bb3d209fb96cd49892c7c5f781b137
+    name: WreslingEffectsVolume
+  - guid: d2c35943d055a0b4dab1c4c02e80e5df
+    name: WrestlingMusicVolume
   m_AudioMixerGroupViews:
   - guids:
     - ae4e43f7c10aa15438c24087de36d638

@@ -16,6 +16,7 @@ TagManager:
   - Writing
   - P2ScoreText
   - P1ScoreText
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX
