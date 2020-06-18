@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainAudio : MonoBehaviour
 {
@@ -30,15 +31,15 @@ public class MainAudio : MonoBehaviour
         }
     }
 
-    public static void SetEffectVolume(float volume)
+    public static void SetEffectVolume(Slider slider)
     {
-        float clampedVolume = Mathf.Clamp(volume, -80f, 0f);
+        float clampedVolume = Mathf.Clamp(slider.value, -80f, 0f);
         mixer.SetFloat("WrestlingEffectsVolume", clampedVolume);
     }
 
-    public static void SetMusicVolume(float volume)
+    public static void SetMusicVolume(Slider slider)
     {
-        float clampedVolume = Mathf.Clamp(volume, -80f, 0f);
+        float clampedVolume = Mathf.Clamp(slider.value, -80f, 0f);
         mixer.SetFloat("WrestlingMusicVolume", clampedVolume);
     }
 
