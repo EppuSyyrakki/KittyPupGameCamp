@@ -166,6 +166,11 @@ PrefabInstance:
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 1094838233}
+    - target: {fileID: 5243610709099848887, guid: 5846b75afe4613941a7d4e2580441ddf,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 1.97
+      objectReference: {fileID: 0}
     - target: {fileID: 5629402419202938744, guid: 5846b75afe4613941a7d4e2580441ddf,
         type: 3}
       propertyPath: lengthInSec
@@ -185,6 +190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.type
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629402419202938744, guid: 5846b75afe4613941a7d4e2580441ddf,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7183687690671372086, guid: 5846b75afe4613941a7d4e2580441ddf,
         type: 3}
@@ -495,6 +505,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bcdf4c542993024791ae3d317abe48d, type: 3}
+--- !u!1 &1604919695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6252327967829210061, guid: 8bcdf4c542993024791ae3d317abe48d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1604919694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1668287088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -507,6 +523,11 @@ PrefabInstance:
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 640396087}
+    - target: {fileID: 5243610709099848887, guid: efaa48838485f514bb80e0ac3cb11a6d,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 1.97
+      objectReference: {fileID: 0}
     - target: {fileID: 5877350175369955354, guid: efaa48838485f514bb80e0ac3cb11a6d,
         type: 3}
       propertyPath: lengthInSec
@@ -526,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ShapeModule.type
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877350175369955354, guid: efaa48838485f514bb80e0ac3cb11a6d,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7183687690671372086, guid: efaa48838485f514bb80e0ac3cb11a6d,
         type: 3}
@@ -738,5 +764,10 @@ PrefabInstance:
       propertyPath: _scoreTextTwo
       value: 
       objectReference: {fileID: 458761357}
+    - target: {fileID: 4761384275209298728, guid: cb9780cf05b45e24abced231d1acae56,
+        type: 3}
+      propertyPath: textObj
+      value: 
+      objectReference: {fileID: 1604919695}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb9780cf05b45e24abced231d1acae56, type: 3}

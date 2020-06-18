@@ -39,6 +39,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2670491922347074680}
     m_Modifications:
+    - target: {fileID: 855787029023665754, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 1115486386489573501, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
         type: 3}
       propertyPath: menus.Array.size
@@ -148,6 +153,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas In Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906967935056957169, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278585863
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906967935056957169, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.026916312
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906967935056957169, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906967935056957169, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.023317888
       objectReference: {fileID: 0}
     - target: {fileID: 5030758783460908694, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
         type: 3}
