@@ -8,22 +8,35 @@ namespace Wrestling
 {
     public class UIMaster : MonoBehaviour
     {
+
         private void Start()
         {
         }
 
         public void ChangeScene()
         {
-            // randomize the arena from all the arenas
-            int _count = SceneManager.sceneCountInBuildSettings;
+            // randomize the arena from all the arenas, excluding end scene
+            int _count = SceneManager.sceneCountInBuildSettings - 1;
             int _sceneIndex = UnityEngine.Random.Range(1, _count);
 
             SceneManager.LoadScene(sceneBuildIndex: _sceneIndex);
         }
 
+        public void StartNewGame()
+        {
+            ChangeScene();
+            ScoreKeeper._playerOneScore = 0;
+            ScoreKeeper._playerTwoScore = 0;
+        }
+
         public void ReturnToMainMenu()
         {
             SceneManager.LoadScene(sceneBuildIndex: 0);
+        }
+
+        public void ChangeToEndScene()
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 3);
         }
 
         public void QuitGame()

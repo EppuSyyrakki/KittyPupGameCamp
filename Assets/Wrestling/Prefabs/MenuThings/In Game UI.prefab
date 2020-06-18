@@ -134,6 +134,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4041759514172476316, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeToEndScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4047421706507841154, guid: d2e4cbf7f215cf244807ff39b0d6e6b6,
         type: 3}
       propertyPath: m_TagString

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Wrestling/ArenaRobots.unity
     guid: f550775950969ef4ca6d4f25181dc86d
+  - enabled: 1
+    path: Assets/Wrestling/EndScene.unity
+    guid: 3704c2968b818dd4ab71a618a35bdba3
   m_configObjects: {}
