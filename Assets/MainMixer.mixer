@@ -14,6 +14,39 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6458272990196966432
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WrestlingEffects
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 89619958ae011294db74d6b33824d44b
+  m_Children: []
+  m_Volume: f9bb3d209fb96cd49892c7c5f781b137
+  m_Pitch: fa53eb9d07a21ad48bcf78f4b1a11cd9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 3879723092851109793}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-5337424199185126639
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: badb75fac2adf154db360a1cf7f885bc
+  m_EffectName: Attenuation
+  m_MixLevel: c679e8a705fa9a64ea921add2e04f155
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-5015440834832724393
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -58,6 +91,8 @@ AudioMixerController:
     - ae4e43f7c10aa15438c24087de36d638
     - ed0039040215b2344bcc02aee43be092
     - 15ecaaf91b6de5846986909aefa8f81e
+    - 738c4bd02730cca4b94fc224c2c23a40
+    - 89619958ae011294db74d6b33824d44b
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -73,6 +108,8 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 5455078880426975575}
   - {fileID: -5015440834832724393}
+  - {fileID: 5847112161409532495}
+  - {fileID: -6458272990196966432}
   m_Volume: c2ad032f8fdd9cf448be0125290fc558
   m_Pitch: ca1760c024c667f439990c4fff0fb0e0
   m_Send: 00000000000000000000000000000000
@@ -125,6 +162,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &3879723092851109793
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 378b4e66ffc410c4ebb0e6a4b176604a
+  m_EffectName: Attenuation
+  m_MixLevel: 9a682c4da83d5d545b74459324a6b773
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &5455078880426975575
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -141,6 +192,25 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 2196514077759982012}
   - {fileID: 6505712046997165264}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &5847112161409532495
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WrestlingMusic
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 738c4bd02730cca4b94fc224c2c23a40
+  m_Children: []
+  m_Volume: d2c35943d055a0b4dab1c4c02e80e5df
+  m_Pitch: a90d0d5eb911d754ca4f75407d287015
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -5337424199185126639}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0

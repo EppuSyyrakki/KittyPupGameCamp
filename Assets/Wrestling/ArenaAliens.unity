@@ -227,16 +227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 7830100190865986461, guid: 36c0b00f50ce0a04ebb13ac6da4655d9,
-        type: 3}
-      propertyPath: yOffset
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7830100190865986461, guid: 36c0b00f50ce0a04ebb13ac6da4655d9,
-        type: 3}
-      propertyPath: xOffset
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7830100190865986462, guid: 36c0b00f50ce0a04ebb13ac6da4655d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -334,6 +324,16 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.scalar
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6034663757267056241, guid: 9e99831d753fc1a4099ee007b8f4210a,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.18575263
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034663757267056241, guid: 9e99831d753fc1a4099ee007b8f4210a,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 3.3000002
+      objectReference: {fileID: 0}
     - target: {fileID: 7183687690671372086, guid: 9e99831d753fc1a4099ee007b8f4210a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -401,21 +401,6 @@ PrefabInstance:
       objectReference: {fileID: 1181015320}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e99831d753fc1a4099ee007b8f4210a, type: 3}
---- !u!1 &827162880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7830100190865986457, guid: 36c0b00f50ce0a04ebb13ac6da4655d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 313559338}
-  m_PrefabAsset: {fileID: 0}
---- !u!45 &827162881
-Skybox:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827162880}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 4499cc08a57ecca4d9a47cb0263c7bf7, type: 2}
 --- !u!1 &1067981566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4410308568783791187, guid: 8bcdf4c542993024791ae3d317abe48d,
