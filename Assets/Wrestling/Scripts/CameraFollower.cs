@@ -16,7 +16,7 @@ public class CameraFollower : MonoBehaviour
     void Update()
     {
         // Vector3 targetInWorld = transform.TransformPoint(target.position);
-        // transform.position = new Vector3(targetInWorld.x, targetInWorld.y + 2, transform.position.z);
+        transform.position = new Vector3(target.position.x / 2, transform.position.y, transform.position.z);
         transform.LookAt(target);
     }
 }

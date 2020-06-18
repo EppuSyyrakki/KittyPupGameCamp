@@ -4,12 +4,17 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ScoreControl : MonoBehaviour
+public class ScoreControlBACKUP : MonoBehaviour
 {
     public PlayerOne _playerOne;
     public PlayerTwo _playerTwo;
     public Controls _controlsOne;
     public Controls _controlsTwo;
+
+    [SerializeField]
+    private float _scoreTriggerPos;
+
+    public Transform _tappingOutPos;
 
     [SerializeField]
     private int _playerOneScore;
@@ -36,7 +41,7 @@ public class ScoreControl : MonoBehaviour
     [SerializeField]
     private string _scoreFormatTwo = "{0}";
 
-    public static bool _isOneFall { get; set; }
+    private bool _isOneFall { get; set; }
 
 
     private void OnEnable()
@@ -54,9 +59,11 @@ public class ScoreControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        float tmp = _playerOne.transform.position.y;
+        Debug.Log("Begin y: " + tmp );
+        _scoreTriggerPos = _tappingOutPos.position.y;
         InitScores();
         InitFallBools();
-        UpdateScoreOutput();
     }
 
     private void InitFallBools()
@@ -70,6 +77,19 @@ public class ScoreControl : MonoBehaviour
         _playerTwoScore = ScoreKeeper._playerTwoScore;
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        ListenOneFalls();
+        UpdateScoreOutput();
+    }
+
+    private void ListenOneFalls()
+    {
+        if (_playerOne.transform.position.y <= _scoreTriggerPos) Wrestling.EventManager.RaiseOnPointForTwo();
+        if (_playerTwo.transform.position.y <= _scoreTriggerPos) Wrestling.EventManager.RaiseOnPointForOne();
+    }
+
     private void AddScoreForOne()
     { 
         if (!_isOneFall)
@@ -77,39 +97,35 @@ public class ScoreControl : MonoBehaviour
             ScoreKeeper._playerOneScore++;
             _controlsTwo.Dislocate();
             _isOneFall = true;
-            UpdateScoreOutput();
         }
     }
 
     private void AddScoreForTwo()
     {
+
         if (!_isOneFall)
         {
             ScoreKeeper._playerTwoScore++;
             _controlsOne.Dislocate();
             _isOneFall = true;
-            UpdateScoreOutput();
         }
+    }
+
+    public int GetPlayerOneScore()
+    {
+        return ScoreKeeper._playerOneScore;
+    }
+
+    public int GetPlayerTwoScore()
+    {
+        return ScoreKeeper._playerTwoScore;
     }
 
     private void UpdateScoreOutput()
     {
-        _playerOneScore = ScoreKeeper._playerOneScore;
-        _playerTwoScore = ScoreKeeper._playerTwoScore;
+        _playerOneScore = GetPlayerOneScore();
+        _playerTwoScore = GetPlayerTwoScore();
         _scoreTextOne.text = string.Format(format: _scoreFormatOne, arg0: _playerOneScore);
         _scoreTextTwo.text = string.Format(format: _scoreFormatTwo, arg0: _playerTwoScore);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player1")
-        {
-            Wrestling.EventManager.RaiseOnPointForTwo();
-        }
-
-        if (collision.gameObject.tag == "Player2")
-        {
-            Wrestling.EventManager.RaiseOnPointForOne();
-        }
     }
 }

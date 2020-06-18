@@ -45,7 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerOne: {fileID: 0}
   _playerTwo: {fileID: 0}
+  _controlsOne: {fileID: 0}
+  _controlsTwo: {fileID: 0}
   _scoreTriggerPos: -8
+  _tappingOutPos: {fileID: 0}
   _playerOneScore: 0
   _playerTwoScore: 0
   _scoreTextPlayerOne: {fileID: 0}
